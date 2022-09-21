@@ -32,7 +32,4 @@ public class PricingCalculatorPage {
 //        driver.findElement(By.linkText("COMPUTE ENGINE")).click();
         tabHolder.click();
     }
-
-
-
 }
