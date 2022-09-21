@@ -15,12 +15,6 @@ public class PastebinTest {
         driver = new ChromeDriver();
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void browserShutDown() {
-        driver.quit();
-        driver = null;
-    }
-
     @Test
     public void createNewPasteOnPestebin() {
 
@@ -28,5 +22,11 @@ public class PastebinTest {
                 .openPage()
                 .fillFields()
                 .createNewPaste();
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void browserShutDown() {
+        driver.quit();
+        driver = null;
     }
 }
