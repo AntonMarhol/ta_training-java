@@ -4,6 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class FillFieldsOnPastebinHomePage {
 
@@ -35,16 +39,30 @@ public class FillFieldsOnPastebinHomePage {
 
     public FillFieldsOnPastebinHomePage fillFields () {
 
+        waitForElementToBeClickable(fillTheText);
         fillTheText.sendKeys(TEXT);
+
+        waitForElementToBeClickable(selectExpiration);
         selectExpiration.click();
+
+        waitForElementToBeClickable(insertExpiration);
         insertExpiration.click();
+
+        waitForElementToBeClickable(pasteName);
         pasteName.sendKeys(NAME);
 
         return this;
     }
 
-    public void createNewPaste () {
+    public WebDriver createNewPaste () {
 
+        waitForElementToBeClickable(createPaste);
         createPaste.click();
+
+        return driver;
+    }
+
+    private void waitForElementToBeClickable(WebElement element){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
     }
 }

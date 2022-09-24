@@ -1,6 +1,10 @@
 package com.epam.training.student_anton_marhol.i_can_win.page;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class PastebinHomePage {
 
@@ -12,7 +16,9 @@ public class PastebinHomePage {
     }
 
     public FillFieldsOnPastebinHomePage openPage() {
+
         driver.get(HOME_PAGE_URL);
+
         return new FillFieldsOnPastebinHomePage(driver);
     }
 }
