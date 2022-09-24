@@ -22,10 +22,10 @@ public class FillFieldsOnPastebinHomePage {
     private WebElement fillTheText;
 
     @FindBy (id = "select2-postform-format-container")
-    private WebElement selectHighlighting;
+    private WebElement selectSyntaxHighlighting;
 
     @FindBy (xpath = "//li[text()='Bash']")
-    private WebElement insertHighlighting;
+    private WebElement insertSyntaxHighlighting;
 
     @FindBy (id = "select2-postform-expiration-container")
     private WebElement selectExpiration;
@@ -48,26 +48,26 @@ public class FillFieldsOnPastebinHomePage {
     public FillFieldsOnPastebinHomePage fillFields () {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+                                                                        //INSERT NEW PASTE TEXT
         fillTheText.sendKeys(TEXT);
-
-        selectHighlighting.click();
-        wait.until(ExpectedConditions.elementToBeClickable(insertHighlighting));
-        insertHighlighting.click();
-
+                                                                        //SELECT SYNTAX HIGHLIGHTING
+        selectSyntaxHighlighting.click();
+        wait.until(ExpectedConditions.elementToBeClickable(insertSyntaxHighlighting));
+        insertSyntaxHighlighting.click();
+                                                                        //SELECT EXPIRATION TIME
         selectExpiration.click();
         wait.until(ExpectedConditions.elementToBeClickable(insertExpiration));
         insertExpiration.click();
-
+                                                                        //INSERT PASTE NAME
         pasteName.sendKeys(NAME);
 
         return this;
     }
 
     public WebDriver createNewPaste () {
-
+                                                                        //CREATE PASTE
         createPaste.click();
-        CustomConditions.jQueryAJAXsCompleted();
+        new WebDriverWait(driver,Duration.ofSeconds(10)).until(CustomConditions.jQueryAJAXsCompleted());
 
         return driver;
     }

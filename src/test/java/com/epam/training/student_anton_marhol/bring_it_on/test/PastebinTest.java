@@ -1,6 +1,6 @@
 package com.epam.training.student_anton_marhol.bring_it_on.test;
 
-import com.epam.training.student_anton_marhol.bring_it_on.page.PasteResultPage;
+import com.epam.training.student_anton_marhol.bring_it_on.page.PastebinResultPage;
 import com.epam.training.student_anton_marhol.bring_it_on.page.PastebinHomePage;
 
 import org.openqa.selenium.WebDriver;
@@ -19,41 +19,37 @@ public class PastebinTest {
 
     WebDriver driver;
 
+    PastebinResultPage pastebinResultPage;
+
     @BeforeClass(alwaysRun = true)
     public void browserSetup() {
         driver = new PastebinHomePage(new ChromeDriver())
                 .openPage()
                 .fillFields()
                 .createNewPaste();
+        pastebinResultPage = new PastebinResultPage(driver);
     }
 
     @Test
     public void pasteNameTitleTest() {
 
-        String resultTitleName = new PasteResultPage(driver).tittleName();
-
-        Assert.assertEquals(TITLE_NAME, resultTitleName);
+        Assert.assertEquals(TITLE_NAME, pastebinResultPage.tittleName());
     }
 
     @Test
     public void bashColoredTest() {
 
-        Color resultColorOfTitle = new PasteResultPage(driver).colorOfText();
-
-        Assert.assertTrue(COLOR.equals(resultColorOfTitle));
+        Assert.assertTrue(COLOR.equals(pastebinResultPage.colorOfText()));
     }
 
     @Test
     public void textContentsTest() {
 
-        String resultContentsText = new PasteResultPage(driver).textContent();
-
-        Assert.assertEquals(TEXT, resultContentsText);
+        Assert.assertEquals(TEXT, pastebinResultPage.textContent());
     }
 
     @AfterClass(alwaysRun = true)
     public void browserShutDown() {
         driver.quit();
-        driver = null;
     }
 }
