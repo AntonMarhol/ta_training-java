@@ -13,9 +13,9 @@ import java.time.Duration;
 
 public class PricingCalculatorTheFirstPage {
                                                 // find the first frame
-    private static final int locatorForFrameByNumber = 0;
+    private static final int LOCATOR_FOR_FRAME_BY_NUMBER = 0;
                                                 // find the frame to fill the form
-    private static final String locatorForFrameById = "myFrame";
+    private static final String LOCATOR_FOR_FRAME_BY_ID = "myFrame";
 
     private static final String TAB_COMPUTE_ENGINE_XPATH = "//div[@class='tab-holder compute']";
     private static final String NUMBER_OF_INSTANCES = "4";
@@ -59,9 +59,9 @@ public class PricingCalculatorTheFirstPage {
     public PricingCalculatorTheFirstPage activateTabHolder() {
 
         new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locatorForFrameByNumber));
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(LOCATOR_FOR_FRAME_BY_NUMBER));
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(locatorForFrameById)));
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(LOCATOR_FOR_FRAME_BY_ID)));
         driver.findElement(By.xpath(TAB_COMPUTE_ENGINE_XPATH)).click();
 
         return this;
