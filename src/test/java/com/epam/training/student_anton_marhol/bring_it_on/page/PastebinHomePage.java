@@ -5,13 +5,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PastebinHomePage {
+public class PastebinHomePage extends ParentPage{
 
         private static final String HOME_PAGE_URL = "https://pastebin.com";
-        private final WebDriver driver;
 
         public PastebinHomePage(WebDriver driver) {
-            this.driver = driver;
+            super(driver);
         }
 
         public FillFieldsOnPastebinHomePage openPage() {

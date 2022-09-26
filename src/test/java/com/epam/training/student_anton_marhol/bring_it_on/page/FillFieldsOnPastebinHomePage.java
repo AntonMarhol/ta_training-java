@@ -3,20 +3,17 @@ package com.epam.training.student_anton_marhol.bring_it_on.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FillFieldsOnPastebinHomePage {
+public class FillFieldsOnPastebinHomePage  extends ParentPage{
 
     private static final String TEXT = "git config --global user.name  \"New Sheriff in Town\"\n" +
                                         "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
                                         "git push origin master --force";
     private static final String NAME = "how to gain dominance among developers";
-
-    private final WebDriver driver;
 
     @FindBy(id = "postform-text")
     private WebElement fillTheText;
@@ -40,24 +37,17 @@ public class FillFieldsOnPastebinHomePage {
     private WebElement createPaste;
 
     public FillFieldsOnPastebinHomePage(WebDriver driver) {
-
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public FillFieldsOnPastebinHomePage fillFields () {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                                                                         //INSERT NEW PASTE TEXT
         fillTheText.sendKeys(TEXT);
                                                                         //SELECT SYNTAX HIGHLIGHTING
-        selectSyntaxHighlighting.click();
-        wait.until(ExpectedConditions.elementToBeClickable(insertSyntaxHighlighting));
-        insertSyntaxHighlighting.click();
+        selectElementAndInsert(selectSyntaxHighlighting,insertSyntaxHighlighting);
                                                                         //SELECT EXPIRATION TIME
-        selectExpiration.click();
-        wait.until(ExpectedConditions.elementToBeClickable(insertExpiration));
-        insertExpiration.click();
+        selectElementAndInsert(selectExpiration,insertExpiration);
                                                                         //INSERT PASTE NAME
         pasteName.sendKeys(NAME);
 

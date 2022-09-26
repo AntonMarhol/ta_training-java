@@ -5,26 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PastebinResultPage {
+public class PastebinResultPage  extends ParentPage{
 
     private static final String CSS_SELECTOR_FOR_TITLE_NAME = "h1";
     private static final String CSS_SELECTOR_FOR_TEXT_CONTENT = "pre";
     private static final String XPATH_SELECTOR_FOR_COLOR_OF_TEXT = "//*[@class='kw2']";
 
-    private final WebDriver driver;
-
     @FindBy (xpath = "//a[text()='raw']")
     private WebElement buttonRAW;
 
     public PastebinResultPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+        super(driver);
     }
 
     public String tittleName () {
