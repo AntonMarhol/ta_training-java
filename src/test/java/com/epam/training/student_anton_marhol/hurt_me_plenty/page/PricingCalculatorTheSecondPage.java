@@ -4,15 +4,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+public class PricingCalculatorTheSecondPage extends ParentPage{
 
-public class PricingCalculatorTheSecondPage {
-
-    private final WebDriver driver;
                                                              // CLICK TO SELECT DATA IN FORM
     @FindBy (id = "select_463")
     WebElement clickToClickToSelectGPUType;
@@ -51,8 +45,7 @@ public class PricingCalculatorTheSecondPage {
     WebElement buttonAddToEstimate;
 
     public PricingCalculatorTheSecondPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public PricingCalculatorTheSecondPage fillTheSecondPartOfForm(){
@@ -78,19 +71,6 @@ public class PricingCalculatorTheSecondPage {
         buttonAddToEstimate.click();
 
         return driver;
-    }
-
-    private void setElement(WebElement clickElement, WebElement selectElement, JavascriptExecutor executor){
-
-        clickElement.click();
-        executor.executeScript("arguments[0].click();", selectElement);
-        waitForElementInvisibility(driver, selectElement);
-    }
-
-    private void waitForElementInvisibility(WebDriver driver, WebElement element){
-
-        new WebDriverWait(driver, Duration.ofSeconds(2))
-                .until(ExpectedConditions.invisibilityOf(element));
     }
 }
 

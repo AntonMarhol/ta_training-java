@@ -5,13 +5,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PricingCalculatorTheFirstPage {
+public class PricingCalculatorTheFirstPage extends ParentPage{
+
                                                 // find the first frame
     private static final int LOCATOR_FOR_FRAME_BY_NUMBER = 0;
                                                 // find the frame to fill the form
@@ -19,8 +19,6 @@ public class PricingCalculatorTheFirstPage {
 
     private static final String TAB_COMPUTE_ENGINE_XPATH = "//div[@class='tab-holder compute']";
     private static final String NUMBER_OF_INSTANCES = "4";
-
-    private final WebDriver driver;
 
                                                             // CLICK TO SELECT DATA IN FORM
     @FindBy (id = "select_value_label_82")
@@ -52,8 +50,7 @@ public class PricingCalculatorTheFirstPage {
 
 
     public PricingCalculatorTheFirstPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+        super(driver);
     }
 
     public PricingCalculatorTheFirstPage activateTabHolder() {
@@ -82,19 +79,5 @@ public class PricingCalculatorTheFirstPage {
         setElement(clickToSelectMachineType,selectMachineType,executor);
 
         return new PricingCalculatorTheSecondPage(driver);
-    }
-
-    private void setElement(WebElement clickElement, WebElement selectElement, JavascriptExecutor executor){
-
-        clickElement.click();
-        executor.executeScript("arguments[0].click();", selectElement);
-        waitForElementInvisibility(driver, selectElement);
-    }
-
-
-    private void waitForElementInvisibility(WebDriver driver, WebElement element){
-
-        new WebDriverWait(driver, Duration.ofSeconds(2))
-                .until(ExpectedConditions.invisibilityOf(element));
     }
 }
