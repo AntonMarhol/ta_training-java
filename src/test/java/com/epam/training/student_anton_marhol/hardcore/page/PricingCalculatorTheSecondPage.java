@@ -66,6 +66,7 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
 
     return this;
 }
+
     public SendEstimateByMailPage pressTheButtonAddToEstimate(){
 
         buttonAddToEstimate.click();

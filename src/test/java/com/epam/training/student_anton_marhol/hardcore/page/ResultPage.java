@@ -3,70 +3,38 @@ package com.epam.training.student_anton_marhol.hardcore.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class EstimateResultPage {
+public class ResultPage extends ParentPage{
 
-//    @FindBy (xpath = "//md-list-item[@class='md-1-line md-no-proxy ng-scope']/following-sibling::md-list-item")
-//    WebElement provisionModel;
-//
-//    @FindBy (xpath = "//div[@class='md-list-item-text ng-binding cpc-cart-multiline flex']")
-//    WebElement instanceType;
-//
-//    @FindBy (xpath = "//md-list-item[@class='md-1-line md-no-proxy']")
-//    WebElement region;
-//
-//    @FindBy (xpath = "//div[@class='md-list-item-text ng-binding cpc-cart-multiline flex']/../following-sibling::md-list-item/following-sibling::md-list-item/child::div")
-//    WebElement localSSD;
-//
-//    @FindBy (xpath = "//md-list-item[@class='md-1-line md-no-proxy ng-scope']/child::div")
-//    WebElement commitmentTerm;
+    private static final String IFMAIL_FRAME_OF_YOPMAIL = "ifmail";
+
+    @FindBy (xpath = "//*[text()='Total Estimated Monthly Cost']/../following-sibling::td/child::h3")
+    WebElement totalCostInMail;
 
     @FindBy (xpath = "//b[@class='ng-binding']")
-    WebElement totalCost;
+    WebElement totalCostInPricingCalculator;
 
-    private final WebDriver driver;
-
-    public EstimateResultPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ResultPage(WebDriver driver) {
+        super(driver);
     }
 
-//    public String lookForProvisionModel () {
-//
-//        return provisionModel.getText().replaceFirst("Provisioning model: ","");
-//    }
-//
-//    public String lookForInstanceType () {
-//
-//        return instanceType.getText()
-//                .replaceFirst("Instance type: ","")
-//                .replaceFirst("\nCommitted Use Discount applied","");
-//    }
-//
-//    public String lookForTheRegion () {
-//
-//        return region.getText().replaceFirst("Region: ","");
-//    }
-//
-//    public String lookForLocalSSD() {
-//
-//        return localSSD.getText()
-//                .replaceFirst("Local SSD: ","")
-//                .replaceFirst("\nCommitted Use Discount applied","");
-//    }
-//
-//    public String lookForCommitmentTerm () {
-//
-//        return commitmentTerm.getText().replaceFirst("Commitment term: ","");
-//    }
+    public String lookForTotalEstimatedCostInPricingCalculator() {
 
-    public String lookForTotalEstimatedCost() {
+        driver.switchTo().window(googleCloudWindow);
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(ZERO_FRAME_OF_PRICING_CALCULATOR);
+        driver.switchTo().frame(MYFRAME_FRAME_OF_PRICING_CALCULATOR);
 
-
-
-        return totalCost.getText()
+        return totalCostInPricingCalculator.getText()
                 .replaceFirst("Estimated Component Cost: ", "")
                 .replaceFirst(" per 1 month", "");
+    }
+
+    public String lookForEstimatedCostInMail() {
+
+        driver.switchTo().window(yopmailWindow);
+        driver.switchTo().frame(IFMAIL_FRAME_OF_YOPMAIL);
+
+        return totalCostInMail.getText();
     }
 }

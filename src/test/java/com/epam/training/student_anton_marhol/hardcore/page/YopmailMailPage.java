@@ -54,5 +54,4 @@ public class YopmailMailPage extends ParentPage{
 
         return driver;
     }
-
 }

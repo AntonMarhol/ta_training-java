@@ -22,7 +22,7 @@ public class SendEstimateByMailPage extends ParentPage{
         super(driver);
     }
 
-    public YopmailHomePage selectSendByEmail(){
+    public YopmailHomePage selectOptionSendByEmail(){
 
         waitForPresenceElementById(SEND_ESTIMATE_BY_MAIL_LOCATOR);
         clickToSendByMail.click();

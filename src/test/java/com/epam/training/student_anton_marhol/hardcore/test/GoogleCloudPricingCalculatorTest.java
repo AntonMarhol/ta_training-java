@@ -34,20 +34,20 @@ public class GoogleCloudPricingCalculatorTest {
                 .fillTheFisrstPartOfForm()
                 .fillTheSecondPartOfForm()
                 .pressTheButtonAddToEstimate()
-                .selectSendByEmail()
+                .selectOptionSendByEmail()
                 .generateMail()
                 .copyGeneratedMail()
                 .sendByEmail()
                 .goToTheMailBox()
                 .checkForLetter();
 
-        resultPage = new ResultPage(driver);
-
         Assert.assertEquals(driver.getTitle(),BROWSER_TITLE);
     }
 
     @Test
     public void totalEstimatedCostTest() {
+
+        resultPage = new ResultPage(driver);
 
         Assert.assertEquals(resultPage.lookForEstimatedCostInMail(),resultPage.lookForTotalEstimatedCostInPricingCalculator());
     }
