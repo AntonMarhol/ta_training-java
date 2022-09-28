@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class YopmailMailPage extends ParentPage{
 
-    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']";
+    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']hh";
 
     @FindBy (id = "egen")
     WebElement generatedMail;
@@ -45,12 +45,13 @@ public class YopmailMailPage extends ParentPage{
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
         catch (TimeoutException exception) {
+
             driver.switchTo().defaultContent();
             refreshMail.click();
-        }
 
-        driver.switchTo().frame(INBOX_FRAME_OF_YOPMAIL_INBOX);
-        waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
+            driver.switchTo().frame(INBOX_FRAME_OF_YOPMAIL_INBOX);
+            waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
+        }
 
         return driver;
     }
