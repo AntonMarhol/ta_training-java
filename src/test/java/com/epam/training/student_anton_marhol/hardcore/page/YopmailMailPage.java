@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class YopmailMailPage extends ParentPage{
 
-    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']hh";
+    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']";
 
     @FindBy (id = "egen")
     WebElement generatedMail;
