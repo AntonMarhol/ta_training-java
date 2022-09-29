@@ -21,6 +21,7 @@ public class GoogleCloudPricingCalculatorTest {
     public void browserSetup() {
 
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @Test

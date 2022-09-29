@@ -35,6 +35,8 @@ public class ParentPage {
 
     protected void setElement(WebElement clickElement, WebElement selectElement, JavascriptExecutor executor){
 
+        executor.executeScript("window.scrollBy(0,1000)");
+
         clickElement.click();
         executor.executeScript("arguments[0].click();", selectElement);
         waitForElementInvisibility(selectElement);

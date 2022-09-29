@@ -4,6 +4,10 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class YopmailMailPage extends ParentPage{
 
@@ -39,7 +43,11 @@ public class YopmailMailPage extends ParentPage{
 
     public WebDriver checkForLetter(){
 
-        driver.switchTo().frame(INBOX_FRAME_OF_YOPMAIL_INBOX);
+        driver.switchTo().defaultContent();
+        refreshMail.click();
+
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX));
 
         try {
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
@@ -49,7 +57,9 @@ public class YopmailMailPage extends ParentPage{
             driver.switchTo().defaultContent();
             refreshMail.click();
 
-            driver.switchTo().frame(INBOX_FRAME_OF_YOPMAIL_INBOX);
+            new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX));
+
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
 
