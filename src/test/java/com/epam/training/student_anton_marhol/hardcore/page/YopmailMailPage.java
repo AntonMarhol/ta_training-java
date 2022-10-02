@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class YopmailMailPage extends ParentPage{
 
     private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']";
@@ -46,8 +44,7 @@ public class YopmailMailPage extends ParentPage{
         driver.switchTo().defaultContent();
         refreshMail.click();
 
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX));
+        waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
 
         try {
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
@@ -57,12 +54,16 @@ public class YopmailMailPage extends ParentPage{
             driver.switchTo().defaultContent();
             refreshMail.click();
 
-            new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX));
+            waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
 
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
 
         return driver;
+    }
+
+    protected void waitForFrameAndSwitchToIt(String frame){
+        new WebDriverWait(driver, BASE_WAIT_TIME)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }
 }

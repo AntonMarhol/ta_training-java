@@ -12,9 +12,9 @@ import java.time.Duration;
 
 public class ParentPage {
 
-    protected static final String GOOGLE_CLOUD_URL = "https://cloud.google.com/";
-    protected static final String YOPMAIL_URL = "https://yopmail.com/en/";
-
+    protected static final Duration LONG_WAIT_TIME = Duration.ofSeconds(30);
+    protected static final Duration BASE_WAIT_TIME = Duration.ofSeconds(10);
+    protected static final Duration SHORT_WAIT_TIME = Duration.ofSeconds(5);
                                                                                 // the first frame of pricing calculator form
     protected static final int ZERO_FRAME_OF_PRICING_CALCULATOR = 0;
                                                                                 // the frame to fill form of pricing calculator
@@ -33,8 +33,8 @@ public class ParentPage {
         PageFactory.initElements(driver,this);
     }
 
-    protected void setElement(WebElement clickElement, WebElement selectElement, JavascriptExecutor executor){
-
+    protected void setElement(WebElement clickElement, WebElement selectElement){
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("window.scrollBy(0,1000)");
 
         clickElement.click();
@@ -43,20 +43,17 @@ public class ParentPage {
     }
 
     protected void waitForElementInvisibility(WebElement element){
-
-        new WebDriverWait(driver, Duration.ofSeconds(2))
+        new WebDriverWait(driver, SHORT_WAIT_TIME)
                 .until(ExpectedConditions.invisibilityOf(element));
     }
 
     protected void waitForPresenceElementById(String selectorForElement){
-
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.id(selectorForElement)));
     }
 
     protected void waitForPresenceElementByXpath(String selectorForElement){
-
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectorForElement)));
     }
 }

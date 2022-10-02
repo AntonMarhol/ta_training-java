@@ -6,12 +6,11 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 
 public class YopmailHomePage extends ParentPage{
 
+    private static final String YOPMAIL_URL = "https://yopmail.com/en/";
     private static final String GENERATE_EMAIL_XPATH = "//a[@title = 'Disposable Email Address Generator creates a new temporary email address for you in one click!']";
 
     @FindBy (xpath = GENERATE_EMAIL_XPATH)
@@ -26,7 +25,8 @@ public class YopmailHomePage extends ParentPage{
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get(YOPMAIL_URL);
 
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(numberOfWindowsToBe(2));
+        new WebDriverWait(driver, BASE_WAIT_TIME)
+                .until(numberOfWindowsToBe(2));
 
         yopmailWindow = driver.getWindowHandle();
 

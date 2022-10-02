@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class GoogleSearchResultsPage extends ParentPage {
 
     private static final String SEARCH_TEXT_IN_RESULTS = "Google Cloud Platform Pricing Calculator";
@@ -17,7 +15,7 @@ public class GoogleSearchResultsPage extends ParentPage {
 
     public PricingCalculatorTheFirstPage lookingForPricingCalculatorInSearchResult (){
 
-        new WebDriverWait(driver, Duration.ofSeconds(30L))
+        new WebDriverWait(driver, LONG_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText(SEARCH_TEXT_IN_RESULTS)));
         driver.findElement(By.linkText(SEARCH_TEXT_IN_RESULTS)).click();
 

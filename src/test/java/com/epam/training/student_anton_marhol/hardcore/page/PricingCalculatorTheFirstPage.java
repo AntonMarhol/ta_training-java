@@ -1,14 +1,11 @@
 package com.epam.training.student_anton_marhol.hardcore.page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class PricingCalculatorTheFirstPage extends ParentPage {
 
@@ -50,9 +47,9 @@ public class PricingCalculatorTheFirstPage extends ParentPage {
 
     public PricingCalculatorTheFirstPage activateTabHolder() {
 
-        new WebDriverWait(driver, Duration.ofSeconds(30))
+        new WebDriverWait(driver, LONG_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(ZERO_FRAME_OF_PRICING_CALCULATOR));
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(MYFRAME_FRAME_OF_PRICING_CALCULATOR)));
 
         driver.findElement(By.xpath(TAB_COMPUTE_ENGINE_XPATH)).click();
@@ -62,17 +59,15 @@ public class PricingCalculatorTheFirstPage extends ParentPage {
 
     public PricingCalculatorTheSecondPage fillTheFisrstPartOfForm(){
 
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-
         selectNumberOfInstances.sendKeys(NUMBER_OF_INSTANCES);
                                                                             // SELECT OS
-        setElement(clickToSelectOS,selectOS,executor);
+        setElement(clickToSelectOS,selectOS);
                                                                             // SELECT PROVISIONING MODEL
-        setElement(clickToSelectProvisioningModel,selectProvisioningModel,executor);
+        setElement(clickToSelectProvisioningModel,selectProvisioningModel);
                                                                             // SELECT SERIES OF MACHINE
-        setElement(clickToSelectSeriesOfMachine,selectSeriesOfMachine,executor);
+        setElement(clickToSelectSeriesOfMachine,selectSeriesOfMachine);
                                                                             // SELECT MACHINE TYPE (INSTANCE TYPE)
-        setElement(clickToSelectMachineType,selectMachineType,executor);
+        setElement(clickToSelectMachineType,selectMachineType);
 
         return new PricingCalculatorTheSecondPage(driver);
     }

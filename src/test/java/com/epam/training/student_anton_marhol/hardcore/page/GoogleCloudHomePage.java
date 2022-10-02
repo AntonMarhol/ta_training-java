@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class GoogleCloudHomePage extends ParentPage {
 
+    private static final String GOOGLE_CLOUD_URL = "https://cloud.google.com/";
+
     private static final String SEARCH_TEXT = "Google Cloud Platform Pricing Calculator";
     private static final String SEARCH_FIELD_XPATH = "//input[@class='devsite-search-field devsite-search-query']";
 

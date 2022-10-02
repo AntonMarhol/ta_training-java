@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PricingCalculatorTheSecondPage extends ParentPage {
-
                                                              // CLICK TO SELECT DATA IN FORM
     @FindBy (id = "select_463")
     WebElement clickToClickToSelectGPUType;
@@ -49,20 +48,21 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     }
 
     public PricingCalculatorTheSecondPage fillTheSecondPartOfForm(){
-
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
                                                                                // SELECT CHECK-BOX
-        if(!checkBoxAddGPUs.isSelected()) executor.executeScript("arguments[0].click();", checkBoxAddGPUs);
+        if(!checkBoxAddGPUs.isSelected()) {
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", checkBoxAddGPUs);
+        }
                                                                                // SELECT GPUs TYPE
-        setElement(clickToClickToSelectGPUType,selectGPUType,executor);
-                                                                               // SELECT NUMBER OF GPUs
-        setElement(clickToSelectNumberOfGPU,selectNumberOfGPU,executor);
+        setElement(clickToClickToSelectGPUType, selectGPUType);
+                                                                                // SELECT NUMBER OF GPUs
+        setElement(clickToSelectNumberOfGPU, selectNumberOfGPU);
                                                                                // SELECT LOCAL SSD
-        setElement(clickToSelectLocalSSD,selectLocalSSD,executor);
+        setElement(clickToSelectLocalSSD,selectLocalSSD);
                                                                               // SELECT DATACENTER LOCATION (REGION)
-        setElement(clickToSelectDatacenterLocation,selectDatacenterLocation,executor);
+        setElement(clickToSelectDatacenterLocation,selectDatacenterLocation);
                                                                              // SELECT COMMITTED USAGE (COMMITMENT TERM)
-        setElement(clickToCommittedUsage,selectCommittedUsage,executor);
+        setElement(clickToCommittedUsage,selectCommittedUsage);
 
     return this;
 }

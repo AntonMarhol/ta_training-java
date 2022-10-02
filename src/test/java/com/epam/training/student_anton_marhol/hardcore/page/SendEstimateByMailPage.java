@@ -1,6 +1,5 @@
 package com.epam.training.student_anton_marhol.hardcore.page;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
