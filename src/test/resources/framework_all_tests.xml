@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Framework all tests" verbose="1" >
+    <test name="Framework all tests"   >
+        <packages>
+            <package name="com.epam.training.student_anton_marhol.framework_practical_task.test" />
+        </packages>
+    </test>
+</suite>

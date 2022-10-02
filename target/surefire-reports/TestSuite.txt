@@ -1,4 +1,21 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.7 s - in TestSuite
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 46.638 s <<< FAILURE! - in TestSuite
+browserSetupTest(com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest)  Time elapsed: 34.767 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#select_463"}
+  (Session info: chrome=107.0.5304.18)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'LAPTOP-T7K377GD', ip: '192.168.11.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a9eda7cbca8e29f555c030a3c1cefd10, findElement {using=id, value=select_463}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.18, chrome: {chromedriverVersion: 107.0.5304.18 (fde5ebf4e16d..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:64453}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64453/devtoo..., se:cdpVersion: 107.0.5304.18, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a9eda7cbca8e29f555c030a3c1cefd10
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:23)
+
+totalEstimatedCostTest(com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException: null value in entry: handle=null
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.totalEstimatedCostTest(GoogleCloudPricingCalculatorTest.java:41)
+
