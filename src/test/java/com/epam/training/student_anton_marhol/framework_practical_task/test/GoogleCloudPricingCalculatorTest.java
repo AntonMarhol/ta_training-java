@@ -1,12 +1,12 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.test;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import com.epam.training.student_anton_marhol.framework_practical_task.model.Instances;
 import com.epam.training.student_anton_marhol.framework_practical_task.page.GoogleCloudHomePage;
 import com.epam.training.student_anton_marhol.framework_practical_task.page.ResultPage;
 import com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesCreator;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class GoogleCloudPricingCalculatorTest extends CommonConditions{
 
@@ -23,6 +23,7 @@ public class GoogleCloudPricingCalculatorTest extends CommonConditions{
                 .fillTheSecondPartOfForm(instances)
                 .pressTheButtonAddToEstimate()
                 .selectOptionSendByEmail()
+                .createYopmailTab()
                 .generateMail()
                 .copyGeneratedMail()
                 .backToPricingCalculatorTab()

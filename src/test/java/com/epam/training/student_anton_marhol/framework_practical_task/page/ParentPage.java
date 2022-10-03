@@ -16,8 +16,7 @@ public class ParentPage {
     protected static final Duration BASE_WAIT_TIME = Duration.ofSeconds(10);
     protected static final Duration SHORT_WAIT_TIME = Duration.ofSeconds(5);
 
-    protected static final String LOCATOR_FOR_CLOUD_PRICING_CALCULATOR_IN_SEARCH_RESULT = "Google Cloud Platform Pricing Calculator";
-
+    protected static final String LOCATOR_FOR_CLOUD_PRICING_CALCULATOR = "Google Cloud Platform Pricing Calculator";
     protected static final String BASE_LOCATOR = "//md-option/child::div[contains(text(),'%s')]";
                                                                                 // the first frame of pricing calculator form
     protected static final int ZERO_FRAME_OF_PRICING_CALCULATOR = 0;
@@ -36,13 +35,13 @@ public class ParentPage {
         PageFactory.initElements(driver,this);
     }
 
-    protected void setNewElement(WebElement clickElement, String locator){
-        clickElement.click();
+    protected void setNewElement(WebElement dropDownListElement, String locator){
+        dropDownListElement.click();
 
         waitForPresenceElementByXpath(locator);
         WebElement element = driver.findElement(By.xpath(locator));
 
-        clickByScript(element);
+        clickByJavaScript(element);
         waitForElementInvisibility(element);
     }
 
@@ -61,8 +60,16 @@ public class ParentPage {
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectorForElement)));
     }
 
-    protected void clickByScript(WebElement element){
+    protected void clickByJavaScript(WebElement element){
         JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
+    }
+
+    protected void switchToMyFrameOfPricingCalculator(){
+        driver.switchTo().defaultContent();
+        new WebDriverWait(driver, LONG_WAIT_TIME)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(ZERO_FRAME_OF_PRICING_CALCULATOR));
+        new WebDriverWait(driver, BASE_WAIT_TIME)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(MYFRAME_FRAME_OF_PRICING_CALCULATOR)));
     }
 }

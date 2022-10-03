@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Framework_functional_tests" class="navigator-link">
-              <span class="suite-name border-failed">Framework functional tests</span>
+              <span class="suite-name border-passed">Framework functional tests</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Framework_functional_tests" class="hide-methods failed suite-Framework_functional_tests"> (hide)</a> <!-- hide-methods failed suite-Framework_functional_tests -->
-                      <a href="#" panel-name="suite-Framework_functional_tests" class="show-methods failed suite-Framework_functional_tests"> (show)</a> <!-- show-methods failed suite-Framework_functional_tests -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Framework_functional_tests" class="hide-methods passed suite-Framework_functional_tests"> (hide)</a> <!-- hide-methods passed suite-Framework_functional_tests -->
+                      <a href="#" panel-name="suite-Framework_functional_tests" class="show-methods passed suite-Framework_functional_tests"> (show)</a> <!-- show-methods passed suite-Framework_functional_tests -->
                     </span>
-                    <div class="method-list-content failed suite-Framework_functional_tests">
+                    <div class="method-list-content passed suite-Framework_functional_tests">
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Framework_functional_tests" title="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest" class="method navigator-link" hash-for-method="browserSetupTest">browserSetupTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Framework_functional_tests" title="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest" class="method navigator-link" hash-for-method="totalEstimatedCostTest">totalEstimatedCostTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Framework_functional_tests -->
+                    </div> <!-- method-list-content passed suite-Framework_functional_tests -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,9 +122,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Framework_functional_tests" class="panel Framework_functional_tests">
-          <div class="suite-Framework_functional_tests-class-failed">
+          <div class="suite-Framework_functional_tests-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -133,34 +133,6 @@
                   <a name="browserSetupTest">
                   </a> <!-- browserSetupTest -->
                   <span class="method-name">browserSetupTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#select_463&quot;}
-  (Session info: chrome=107.0.5304.18)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;LAPTOP-T7K377GD&apos;, ip: &apos;192.168.11.41&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a9eda7cbca8e29f555c030a3c1cefd10, findElement {using=id, value=select_463}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.18, chrome: {chromedriverVersion: 107.0.5304.18 (fde5ebf4e16d..., userDataDir: C:\Users\HP\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:64453}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64453/devtoo..., se:cdpVersion: 107.0.5304.18, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: a9eda7cbca8e29f555c030a3c1cefd10
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy13.click(Unknown Source)
-	at com.epam.training.student_anton_marhol.framework_practical_task.page.ParentPage.setNewElement(ParentPage.java:47)
-	at com.epam.training.student_anton_marhol.framework_practical_task.page.PricingCalculatorTheSecondPage.fillTheSecondPartOfForm(PricingCalculatorTheSecondPage.java:44)
-	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:23)
-... Removed 33 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -168,21 +140,10 @@ Session ID: a9eda7cbca8e29f555c030a3c1cefd10
                   <a name="totalEstimatedCostTest">
                   </a> <!-- totalEstimatedCostTest -->
                   <span class="method-name">totalEstimatedCostTest</span>
-                  <div class="stack-trace">java.lang.NullPointerException: null value in entry: handle=null
-	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
-	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
-	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
-	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
-	at org.openqa.selenium.remote.DriverCommand.SWITCH_TO_WINDOW(DriverCommand.java:273)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:1084)
-	at com.epam.training.student_anton_marhol.framework_practical_task.page.ResultPage.lookForEstimatedCostInMail(ResultPage.java:35)
-	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.totalEstimatedCostTest(GoogleCloudPricingCalculatorTest.java:41)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Framework_functional_tests-class-failed -->
+          </div> <!-- suite-Framework_functional_tests-class-passed -->
         </div> <!-- panel Framework_functional_tests -->
         <div panel-name="test-xml-Framework_functional_tests" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -239,16 +200,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'browserSetupTest')
 data.setCell(0, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-data.setCell(0, 3, 34752);
+data.setCell(0, 3, 36423);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'totalEstimatedCostTest')
 data.setCell(1, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-data.setCell(1, 3, 4);
+data.setCell(1, 3, 224);
 window.suiteTableData['Framework_functional_tests']= { tableData: data, tableDiv: 'times-div-Framework_functional_tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 36 seconds</span>
               <div id="times-div-Framework_functional_tests">
               </div> <!-- times-div-Framework_functional_tests -->
             </div> <!-- times-div -->
@@ -280,20 +241,16 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">browserSetupTest</span>
-                <span class="method-start">9999 ms</span>
+                <span class="method-start">5590 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">totalEstimatedCostTest</span>
-                <span class="method-start">44764 ms</span>
+                <span class="method-start">42015 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">browserShutDown</span>
-                <span class="method-start">44768 ms</span>
+                <span class="method-start">42239 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

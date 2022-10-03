@@ -1,13 +1,13 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.page;
 
+import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonConditions.yopmailMail;
+
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonConditions.yopmailMail;
 
 public class YopmailMailPage extends ParentPage {
 
@@ -17,10 +17,10 @@ public class YopmailMailPage extends ParentPage {
     WebElement generatedMail;
 
     @FindBy (xpath = "//span[text()='Check Inbox']")
-    WebElement checkInBox;
+    WebElement buttonCheckInBox;
 
     @FindBy (id = "refresh")
-    WebElement refreshMail;
+    WebElement buttonRefreshMail;
 
     @FindBy (xpath = "//div[@class='bname']")
     WebElement mailBoxAdress;
@@ -40,17 +40,20 @@ public class YopmailMailPage extends ParentPage {
 
     public YopmailMailPage goToTheMailBox() {
         driver.switchTo().window(yopmailTab);
-        checkInBox.click();
+        buttonCheckInBox.click();
         return this;
     }
 
     public String isMailAdressCreated() {
+                                    // switching to default content because otherwise mailbox address will not be found
+        driver.switchTo().defaultContent();
         return mailBoxAdress.getText();
     }
 
     public YopmailMailPage checkForLetter(){
+
         driver.switchTo().defaultContent();
-        refreshMail.click();
+        buttonRefreshMail.click();
 
         waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
         try {
@@ -59,7 +62,7 @@ public class YopmailMailPage extends ParentPage {
         catch (TimeoutException exception) {
 
             driver.switchTo().defaultContent();
-            refreshMail.click();
+            buttonRefreshMail.click();
 
             waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
 
@@ -68,7 +71,7 @@ public class YopmailMailPage extends ParentPage {
         return this;
     }
 
-    protected void waitForFrameAndSwitchToIt(String frame){
+    private void waitForFrameAndSwitchToIt(String frame){
         new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
     }

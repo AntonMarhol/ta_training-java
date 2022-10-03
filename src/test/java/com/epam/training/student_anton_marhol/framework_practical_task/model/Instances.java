@@ -9,7 +9,7 @@ public class Instances {
     private String provisioningModel;
     private String machineSeries;
     private String machineType;
-    private String addGPU;
+    private String checkboxAddGPU;
     private String typeOfGPU;
     private String numberOfGPUs;
     private String localSSD;
@@ -19,14 +19,14 @@ public class Instances {
 
     public Instances(String numberOfInstances, String operatingSystemOrSoftware
             , String provisioningModel, String machineSeries, String machineType
-            , String addGPU, String typeOfGPU, String numberOfGPUs, String localSSD
+            , String checkboxAddGPU, String typeOfGPU, String numberOfGPUs, String localSSD
             , String datacenterLocation, String commitedUsage, String commitedUsagePeriod) {
         this.numberOfInstances = numberOfInstances;
         this.operatingSystemOrSoftware = operatingSystemOrSoftware;
         this.provisioningModel = provisioningModel;
         this.machineSeries = machineSeries;
         this.machineType = machineType;
-        this.addGPU = addGPU;
+        this.checkboxAddGPU = checkboxAddGPU;
         this.typeOfGPU = typeOfGPU;
         this.numberOfGPUs = numberOfGPUs;
         this.localSSD = localSSD;
@@ -53,7 +53,7 @@ public class Instances {
         return machineType;
     }
 
-    public String getAddGPU() { return addGPU; }
+    public String getCheckboxAddGPU() { return checkboxAddGPU; }
 
     public String getTypeOfGPU() {
         return typeOfGPU;
@@ -85,7 +85,7 @@ public class Instances {
                 ", provisioningModel='" + provisioningModel + '\'' +
                 ", machineSeries='" + machineSeries + '\'' +
                 ", machineType='" + machineType + '\'' +
-                ", addGPU=" + addGPU +
+                ", addGPU=" + checkboxAddGPU +
                 ", typeOfGPU='" + typeOfGPU + '\'' +
                 ", numberOfGPUs='" + numberOfGPUs + '\'' +
                 ", localSSD='" + localSSD + '\'' +

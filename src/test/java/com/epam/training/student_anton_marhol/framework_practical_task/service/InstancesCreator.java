@@ -9,7 +9,7 @@ public class InstancesCreator {
     public static final String PROVISIONING_MODEL = "testdata.provisioningModel";
     public static final String MACHINE_SERIES = "testdata.machineSeries";
     public static final String MACHINE_TYPE = "testdata.machineType";
-    public static final String ADD_GPU = "testdata.addGPU";
+    public static final String CHEXBOX_ADD_GPU = "testdata.addGPU";
     public static final String TYPE_OF_GPU = "testdata.typeOfGPU";
     public static final String NUMBER_OF_GPUS = "testdata.numberOfGPUs";
     public static final String LOCAL_SSD = "testdata.localSSD";
@@ -23,7 +23,7 @@ public class InstancesCreator {
                 InstancesReader.getInstances(PROVISIONING_MODEL),
                 InstancesReader.getInstances(MACHINE_SERIES),
                 InstancesReader.getInstances(MACHINE_TYPE),
-                InstancesReader.getInstances(ADD_GPU),
+                InstancesReader.getInstances(CHEXBOX_ADD_GPU),
                 InstancesReader.getInstances(TYPE_OF_GPU),
                 InstancesReader.getInstances(NUMBER_OF_GPUS),
                 InstancesReader.getInstances(LOCAL_SSD),

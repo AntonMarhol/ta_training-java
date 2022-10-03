@@ -18,17 +18,15 @@ public class GoogleCloudHomePage extends ParentPage {
     }
 
     public GoogleCloudHomePage openPage() {
-
         driver.get(GOOGLE_CLOUD_URL);
 
         return this;
     }
 
     public GoogleSearchResultsPage searchOnHomePage() {
-
         waitForPresenceElementByXpath(SEARCH_FIELD_XPATH);
 
-        searchField.sendKeys(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR_IN_SEARCH_RESULT);
+        searchField.sendKeys(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR);
         searchField.submit();
 
         return new GoogleSearchResultsPage(driver);

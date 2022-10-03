@@ -5,23 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 
 public class YopmailHomePage extends ParentPage {
 
     protected static final String YOPMAIL_URL = "https://yopmail.com/en/";
 
-    private static final String GENERATE_EMAIL_XPATH = "//a[@title = 'Disposable Email Address Generator creates a new temporary email address for you in one click!']";
+    private static final String BUTTON_GENERATE_EMAIL_XPATH = "//a[@title = 'Disposable Email Address Generator creates a new temporary email address for you in one click!']";
 
-    @FindBy (xpath = GENERATE_EMAIL_XPATH)
-    WebElement createEmailByEmailGenerator;
+    @FindBy (xpath = BUTTON_GENERATE_EMAIL_XPATH)
+    WebElement buttonGenerateEmail;
 
     public YopmailHomePage(WebDriver driver){
         super(driver);
     }
 
-    public YopmailMailPage generateMail() {
+    public YopmailHomePage createYopmailTab() {
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get(YOPMAIL_URL);
 
@@ -29,9 +28,12 @@ public class YopmailHomePage extends ParentPage {
                 .until(numberOfWindowsToBe(2));
 
         yopmailTab = driver.getWindowHandle();
+        return this;
+    }
 
-        waitForPresenceElementByXpath(GENERATE_EMAIL_XPATH);
-        createEmailByEmailGenerator.click();
+    public YopmailMailPage generateMail() {
+        waitForPresenceElementByXpath(BUTTON_GENERATE_EMAIL_XPATH);
+        buttonGenerateEmail.click();
 
         return new YopmailMailPage(driver);
     }

@@ -1,11 +1,11 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.page;
 
+import com.epam.training.student_anton_marhol.framework_practical_task.model.Instances;
+import static com.epam.training.student_anton_marhol.framework_practical_task.util.StringUtils.createXPath;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import com.epam.training.student_anton_marhol.framework_practical_task.model.Instances;
-import static com.epam.training.student_anton_marhol.framework_practical_task.util.StringUtils.createXPath;
 
 public class PricingCalculatorTheSecondPage extends ParentPage {
 
@@ -14,57 +14,54 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     protected static final String COMMITTED_USAGE_LOCATOR = "//*[@id='select_container_131']//child::md-option/child::div[contains(text(),'%s')]/..";
                                                              // CLICK TO SELECT DATA IN FORM
     @FindBy (id = "select_463")
-    WebElement clickToSelectGPUType;
+    WebElement GPUTypeDropDownList;
 
     @FindBy (id = "select_465")
-    WebElement clickToSelectNumberOfGPUs;
+    WebElement numberOfGPUsDropDownList;
 
     @FindBy (xpath = "//md-input-container[@class='md-input-has-placeholder md-input-has-value flex']/child::label[contains(text(),'Local SSD')]/..")
-    WebElement clickToSelectLocalSSD;
+    WebElement localSSDDropDownList;
 
     @FindBy (id = "select_value_label_88")
-    WebElement clickToSelectDatacenterLocation;
+    WebElement datacenterLocationDropDownList;
 
     @FindBy (id = "select_value_label_89")
-    WebElement clickToCommittedUsage;
+    WebElement committedUsageDropDownList;
                                                                         // BUTTON AND CHECK-BOX
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']/div")
-    WebElement checkBoxAddGPUs;
+    WebElement addGPUsCheckBox;
 
     @FindBy (xpath = "//button[@class='md-raised md-primary cpc-button md-button md-ink-ripple']")
-    WebElement buttonAddToEstimate;
+    WebElement addToEstimateButton;
 
     public PricingCalculatorTheSecondPage(WebDriver driver) {
         super(driver);
     }
 
     public PricingCalculatorTheSecondPage fillTheSecondPartOfForm(Instances instances){
-                                                                               // SELECT CHECK-BOX
-        if (instances.getAddGPU().equals("true")) {
-            if (!checkBoxAddGPUs.isSelected()) {
-                clickByScript(checkBoxAddGPUs);
+        if (instances.getCheckboxAddGPU().equals("true")) {
+            if (!addGPUsCheckBox.isSelected()) {
+                clickByJavaScript(addGPUsCheckBox);
             }
-            setNewElement(clickToSelectGPUType, createXPath(BASE_LOCATOR, instances.getTypeOfGPU()));
-            setNewElement(clickToSelectNumberOfGPUs, createXPath(NUMBER_OF_GPU_LOCATOR, instances.getNumberOfGPUs()));
+            setNewElement(GPUTypeDropDownList, createXPath(BASE_LOCATOR, instances.getTypeOfGPU()));
+            setNewElement(numberOfGPUsDropDownList, createXPath(NUMBER_OF_GPU_LOCATOR, instances.getNumberOfGPUs()));
         }
         else {
-            if (checkBoxAddGPUs.isSelected()) {
-                clickByScript(checkBoxAddGPUs);
+            if (addGPUsCheckBox.isSelected()) {
+                clickByJavaScript(addGPUsCheckBox);
             }
         }
-                                                                               // SELECT LOCAL SSD
-        setNewElement(clickToSelectLocalSSD,createXPath(BASE_LOCATOR, instances.getLocalSSD()));
-                                                                              // SELECT DATACENTER LOCATION (REGION)
-        setNewElement(clickToSelectDatacenterLocation,createXPath(DATACENTER_LOCATION_LOCATOR, instances.getDatacenterLocation()));
-                                                                             // SELECT COMMITTED USAGE (COMMITMENT TERM)
+        setNewElement(localSSDDropDownList,createXPath(BASE_LOCATOR, instances.getLocalSSD()));
+        setNewElement(datacenterLocationDropDownList,createXPath(DATACENTER_LOCATION_LOCATOR, instances.getDatacenterLocation()));
+
         if (instances.getCommittedUsagePeriod().equals("Yes")) {
-            setNewElement(clickToCommittedUsage,createXPath(COMMITTED_USAGE_LOCATOR, instances.getCommittedUsage()));
+            setNewElement(committedUsageDropDownList,createXPath(COMMITTED_USAGE_LOCATOR, instances.getCommittedUsage()));
         }
     return this;
 }
 
     public SendEstimateByMailPage pressTheButtonAddToEstimate(){
-        buttonAddToEstimate.click();
+        addToEstimateButton.click();
         return new SendEstimateByMailPage(driver);
     }
 }

@@ -20,9 +20,7 @@ public class ResultPage extends ParentPage {
 
     public String lookForTotalEstimatedCostInPricingCalculator() {
         driver.switchTo().window(googleCloudTab);
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(ZERO_FRAME_OF_PRICING_CALCULATOR);
-        driver.switchTo().frame(MYFRAME_FRAME_OF_PRICING_CALCULATOR);
+        switchToMyFrameOfPricingCalculator();
 
         return totalCostInPricingCalculator.getText()
                 .replaceFirst("Estimated Component Cost: ", "")

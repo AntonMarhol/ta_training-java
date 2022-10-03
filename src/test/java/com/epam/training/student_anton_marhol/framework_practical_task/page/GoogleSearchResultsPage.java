@@ -12,10 +12,9 @@ public class GoogleSearchResultsPage extends ParentPage {
     }
 
     public PricingCalculatorTheFirstPage lookingForPricingCalculatorInSearchResult (){
-
         new WebDriverWait(driver, LONG_WAIT_TIME)
-                .until(ExpectedConditions.presenceOfElementLocated(By.linkText(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR_IN_SEARCH_RESULT)));
-        driver.findElement(By.linkText(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR_IN_SEARCH_RESULT)).click();
+                .until(ExpectedConditions.presenceOfElementLocated(By.linkText(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)));
+        driver.findElement(By.linkText(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)).click();
 
         return new PricingCalculatorTheFirstPage(driver);
     }

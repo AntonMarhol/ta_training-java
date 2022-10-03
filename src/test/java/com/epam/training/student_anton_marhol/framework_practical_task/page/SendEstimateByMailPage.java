@@ -1,32 +1,32 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.page;
 
+import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonConditions.yopmailMail;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonConditions.yopmailMail;
-
 public class SendEstimateByMailPage extends ParentPage {
 
-    private static final String SEND_ESTIMATE_BY_MAIL_LOCATOR = "email_quote";
-    private static final String INPUT_EMAIL_FIELD = "//label[text()='Email ']/following-sibling::input";
+    private static final String BUTTON_TO_INSERT_MAIL_ADDRESS_LOCATOR = "email_quote";
+    private static final String FIELD_FOR_INPUT_EMAIL = "//label[text()='Email ']/following-sibling::input";
 
     @FindBy (xpath = "//div[@class='md-dialog-container ng-scope']/child::md-dialog/child::form/child::md-dialog-actions/child::button[@class='md-raised md-primary cpc-button md-button md-ink-ripple']")
-    WebElement buttonSendByMail;
+    WebElement buttonToSendEstimateByMail;
 
-    @FindBy (id = SEND_ESTIMATE_BY_MAIL_LOCATOR)
-    WebElement clickToSendByMail;
+    @FindBy (id = BUTTON_TO_INSERT_MAIL_ADDRESS_LOCATOR)
+    WebElement buttonOpenMailAddressForm;
 
-    @FindBy (xpath = INPUT_EMAIL_FIELD)
-    WebElement insertMailAddress;
+    @FindBy (xpath = FIELD_FOR_INPUT_EMAIL)
+    WebElement mailAddressField;
 
     public SendEstimateByMailPage(WebDriver driver){
         super(driver);
     }
 
     public YopmailHomePage selectOptionSendByEmail(){
-        waitForPresenceElementById(SEND_ESTIMATE_BY_MAIL_LOCATOR);
-        clickToSendByMail.click();
+        waitForPresenceElementById(BUTTON_TO_INSERT_MAIL_ADDRESS_LOCATOR);
+        buttonOpenMailAddressForm.click();
         googleCloudTab = driver.getWindowHandle();
 
         return new YopmailHomePage(driver);
@@ -34,15 +34,13 @@ public class SendEstimateByMailPage extends ParentPage {
 
     public YopmailMailPage sendByEmail() {
         driver.switchTo().window(googleCloudTab);
+                                                        // refresh Pricing Calculator Tab frames for stable work
+        switchToMyFrameOfPricingCalculator();
 
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(ZERO_FRAME_OF_PRICING_CALCULATOR);
-        driver.switchTo().frame(MYFRAME_FRAME_OF_PRICING_CALCULATOR);
+        waitForPresenceElementByXpath(FIELD_FOR_INPUT_EMAIL);
+        mailAddressField.sendKeys(yopmailMail);
 
-        waitForPresenceElementByXpath(INPUT_EMAIL_FIELD);
-        insertMailAddress.sendKeys(yopmailMail);
-
-        buttonSendByMail.click();
+        buttonToSendEstimateByMail.click();
 
         return new YopmailMailPage(driver);
     }
