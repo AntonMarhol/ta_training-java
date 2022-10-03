@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-03T16:17:00Z" name="smoke tests" finished-at="2022-10-03T16:17:49Z" duration-ms="49074">
+  <suite started-at="2022-10-03T16:44:47Z" name="smoke tests" finished-at="2022-10-03T16:45:32Z" duration-ms="45669">
     <groups>
     </groups>
-    <test started-at="2022-10-03T16:17:00Z" name="smoke tests" finished-at="2022-10-03T16:17:49Z" duration-ms="49074">
+    <test started-at="2022-10-03T16:44:47Z" name="smoke tests" finished-at="2022-10-03T16:45:32Z" duration-ms="45669">
       <class name="com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@776b83cc]" started-at="2022-10-03T16:17:00Z" name="browserSetup" finished-at="2022-10-03T16:17:08Z" duration-ms="7343" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@2d2ffcb7]" started-at="2022-10-03T16:44:47Z" name="browserSetup" finished-at="2022-10-03T16:44:54Z" duration-ms="7376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="basicGoogleCloudFunctionTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@776b83cc]" started-at="2022-10-03T16:17:08Z" name="basicGoogleCloudFunctionTest" finished-at="2022-10-03T16:17:42Z" duration-ms="33995" status="PASS">
+        <test-method signature="basicGoogleCloudFunctionTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@2d2ffcb7]" started-at="2022-10-03T16:44:54Z" name="basicGoogleCloudFunctionTest" finished-at="2022-10-03T16:45:17Z" duration-ms="23036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basicGoogleCloudFunctionTest -->
-        <test-method signature="basicYopmailFunctionTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@776b83cc]" started-at="2022-10-03T16:17:42Z" name="basicYopmailFunctionTest" finished-at="2022-10-03T16:17:48Z" duration-ms="6761" status="PASS">
+        <test-method signature="basicYopmailFunctionTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@2d2ffcb7]" started-at="2022-10-03T16:45:17Z" name="basicYopmailFunctionTest" finished-at="2022-10-03T16:45:31Z" duration-ms="14188" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basicYopmailFunctionTest -->
-        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@776b83cc]" started-at="2022-10-03T16:17:48Z" name="browserShutDown" finished-at="2022-10-03T16:17:49Z" duration-ms="972" status="PASS">
+        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.BasicFunctionTest@2d2ffcb7]" started-at="2022-10-03T16:45:31Z" name="browserShutDown" finished-at="2022-10-03T16:45:32Z" duration-ms="1059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserShutDown -->
