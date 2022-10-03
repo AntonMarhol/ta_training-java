@@ -28,12 +28,14 @@ public class YopmailHomePage extends ParentPage {
                 .until(numberOfWindowsToBe(2));
 
         yopmailTab = driver.getWindowHandle();
+        logger.info("Yopmail tab opened with Yopmail Homepage");
         return this;
     }
 
     public YopmailMailPage generateMail() {
         waitForPresenceElementByXpath(BUTTON_GENERATE_EMAIL_XPATH);
         buttonGenerateEmail.click();
+        logger.info("Mail address generated");
 
         return new YopmailMailPage(driver);
     }

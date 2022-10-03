@@ -33,13 +33,15 @@ public class PricingCalculatorTheFirstPage extends ParentPage {
     }
 
     public PricingCalculatorTheFirstPage activateTabHolder() {
-        switchToMyFrameOfPricingCalculator();
+        switchToMyframeOfPricingCalculator();
         driver.findElement(By.xpath(TAB_COMPUTE_ENGINE_XPATH)).click();
+        logger.info("TAB Compute Engine activated");
         return this;
     }
 
     public PricingCalculatorTheSecondPage fillTheFisrstPartOfForm(Instances instances){
         fieldNumberOfInstances.sendKeys(instances.getNumberOfInstances());
+        logger.info("Number of Instances selected");
 
         setNewElement(operationSystemDropDownList,createXPath(BASE_LOCATOR, instances.getOperatingSystemOrSoftware()));
         setNewElement(provisioningModelDropDownList,createXPath(BASE_LOCATOR, instances.getProvisioningModel()));
@@ -50,7 +52,7 @@ public class PricingCalculatorTheFirstPage extends ParentPage {
     }
 
     public String getTitleOfCurrentPage() {
-        switchToMyFrameOfPricingCalculator();
+        switchToMyframeOfPricingCalculator();
         return driver.getTitle();
     }
 }

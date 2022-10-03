@@ -4,6 +4,7 @@ import static com.epam.training.student_anton_marhol.framework_practical_task.te
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class SendEstimateByMailPage extends ParentPage {
@@ -26,7 +27,11 @@ public class SendEstimateByMailPage extends ParentPage {
 
     public YopmailHomePage selectOptionSendByEmail(){
         waitForPresenceElementById(BUTTON_TO_INSERT_MAIL_ADDRESS_LOCATOR);
+        new Actions(driver)
+                .scrollToElement(buttonOpenMailAddressForm)
+                .perform();
         buttonOpenMailAddressForm.click();
+        logger.info("Mail address form opened");
         googleCloudTab = driver.getWindowHandle();
 
         return new YopmailHomePage(driver);
@@ -34,14 +39,15 @@ public class SendEstimateByMailPage extends ParentPage {
 
     public YopmailMailPage sendByEmail() {
         driver.switchTo().window(googleCloudTab);
+        logger.info("Switched to Google Cloud tab");
                                                         // refresh Pricing Calculator Tab frames for stable work
-        switchToMyFrameOfPricingCalculator();
+        switchToMyframeOfPricingCalculator();
 
         waitForPresenceElementByXpath(FIELD_FOR_INPUT_EMAIL);
         mailAddressField.sendKeys(yopmailMail);
 
         buttonToSendEstimateByMail.click();
-
+        logger.info("Estimate sent by email");
         return new YopmailMailPage(driver);
     }
 }

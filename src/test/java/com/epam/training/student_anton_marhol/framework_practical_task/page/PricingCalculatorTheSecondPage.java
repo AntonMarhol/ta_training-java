@@ -5,6 +5,7 @@ import static com.epam.training.student_anton_marhol.framework_practical_task.ut
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class PricingCalculatorTheSecondPage extends ParentPage {
@@ -19,7 +20,7 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     @FindBy (id = "select_465")
     WebElement numberOfGPUsDropDownList;
 
-    @FindBy (xpath = "//md-input-container[@class='md-input-has-placeholder md-input-has-value flex']/child::label[contains(text(),'Local SSD')]/..")
+    @FindBy (xpath = "//label[contains(text(),'Local SSD')]/..")
     WebElement localSSDDropDownList;
 
     @FindBy (id = "select_value_label_88")
@@ -29,10 +30,10 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     WebElement committedUsageDropDownList;
                                                                         // BUTTON AND CHECK-BOX
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']/div")
-    WebElement addGPUsCheckBox;
+    WebElement checkBoxAddGPUs;
 
-    @FindBy (xpath = "//button[@class='md-raised md-primary cpc-button md-button md-ink-ripple']")
-    WebElement addToEstimateButton;
+    @FindBy (xpath = "//button[contains(@class,'md-raised md-primary cpc-button md-button md-ink-ripple') and contains(text(),'Add to Estimate')]")
+    WebElement buttonAddToEstimate;
 
     public PricingCalculatorTheSecondPage(WebDriver driver) {
         super(driver);
@@ -40,15 +41,17 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
 
     public PricingCalculatorTheSecondPage fillTheSecondPartOfForm(Instances instances){
         if (instances.getCheckboxAddGPU().equals("true")) {
-            if (!addGPUsCheckBox.isSelected()) {
-                clickByJavaScript(addGPUsCheckBox);
-            }
+            scrollPageByAmount(0,200);
+            if (!checkBoxAddGPUs.isSelected()) clickByJavaScript(checkBoxAddGPUs);
+            logger.info("Checkbox Add GPU selected");
             setNewElement(GPUTypeDropDownList, createXPath(BASE_LOCATOR, instances.getTypeOfGPU()));
             setNewElement(numberOfGPUsDropDownList, createXPath(NUMBER_OF_GPU_LOCATOR, instances.getNumberOfGPUs()));
         }
         else {
-            if (addGPUsCheckBox.isSelected()) {
-                clickByJavaScript(addGPUsCheckBox);
+            if (checkBoxAddGPUs.isSelected()) {
+                scrollPageByAmount(0, 200);
+                clickByJavaScript(checkBoxAddGPUs);
+                logger.info("Checkbox Add GPU unselected");
             }
         }
         setNewElement(localSSDDropDownList,createXPath(BASE_LOCATOR, instances.getLocalSSD()));
@@ -61,7 +64,8 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
 }
 
     public SendEstimateByMailPage pressTheButtonAddToEstimate(){
-        addToEstimateButton.click();
+        buttonAddToEstimate.click();
+        logger.info("Added to Estimate");
         return new SendEstimateByMailPage(driver);
     }
 }

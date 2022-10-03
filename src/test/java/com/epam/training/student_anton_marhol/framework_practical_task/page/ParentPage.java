@@ -4,9 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 
@@ -28,6 +31,8 @@ public class ParentPage {
     static String googleCloudTab;
     static String yopmailTab;
 
+    protected final Logger logger = LogManager.getRootLogger();
+
     protected final WebDriver driver;
 
     public ParentPage(WebDriver driver) {
@@ -36,12 +41,15 @@ public class ParentPage {
     }
 
     protected void setNewElement(WebElement dropDownListElement, String locator){
+        scrollPageByAmount(0,100);
         dropDownListElement.click();
 
         waitForPresenceElementByXpath(locator);
-        WebElement element = driver.findElement(By.xpath(locator));
 
+        WebElement element = driver.findElement(By.xpath(locator));
         clickByJavaScript(element);
+
+        logger.info("Element [" + dropDownListElement.getText() + "] selected");
         waitForElementInvisibility(element);
     }
 
@@ -65,11 +73,17 @@ public class ParentPage {
         executor.executeScript("arguments[0].click();", element);
     }
 
-    protected void switchToMyFrameOfPricingCalculator(){
+    protected void switchToMyframeOfPricingCalculator(){
         driver.switchTo().defaultContent();
         new WebDriverWait(driver, LONG_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(ZERO_FRAME_OF_PRICING_CALCULATOR));
         new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(MYFRAME_FRAME_OF_PRICING_CALCULATOR)));
+    }
+
+    protected void scrollPageByAmount(int pixelsX, int pixelsY){
+        new Actions(driver)
+                .scrollByAmount(pixelsX,pixelsY)
+                .perform();
     }
 }

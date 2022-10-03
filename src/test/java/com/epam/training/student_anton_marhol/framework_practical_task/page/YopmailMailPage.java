@@ -31,43 +31,47 @@ public class YopmailMailPage extends ParentPage {
 
     public YopmailMailPage copyGeneratedMail() {
         yopmailMail = generatedMail.getText();
+        logger.info("Mail address copied");
         return new YopmailMailPage(driver);
     }
 
     public SendEstimateByMailPage backToPricingCalculatorTab(){
+        logger.info("Back to Pricing Calculator tab from Yopmail tab");
         return new SendEstimateByMailPage(driver);
     }
 
     public YopmailMailPage goToTheMailBox() {
         driver.switchTo().window(yopmailTab);
         buttonCheckInBox.click();
+        logger.info("Opened Yopmail tab with Yopmail Inbox page");
         return this;
     }
 
     public String isMailAdressCreated() {
                                     // switching to default content because otherwise mailbox address will not be found
         driver.switchTo().defaultContent();
+        logger.info("Email address caught in mailbox");
         return mailBoxAdress.getText();
     }
 
     public YopmailMailPage checkForLetter(){
-
         driver.switchTo().defaultContent();
         buttonRefreshMail.click();
+        logger.info("Mail page refreshed");
 
         waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
         try {
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
         catch (TimeoutException exception) {
-
             driver.switchTo().defaultContent();
             buttonRefreshMail.click();
+            logger.info("Mail page refreshed second time");
 
             waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
-
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
+        logger.info("Letter found");
         return this;
     }
 

@@ -16,6 +16,7 @@ public class GoogleSearchResultsPage extends ParentPage {
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)));
         driver.findElement(By.linkText(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)).click();
 
+        logger.info(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR + " found and opened");
         return new PricingCalculatorTheFirstPage(driver);
     }
 }

@@ -1,11 +1,14 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.test;
 
-import com.epam.training.student_anton_marhol.framework_practical_task.driver.CreateDriver;
+import com.epam.training.student_anton_marhol.framework_practical_task.driver.DriverSingleton;
+import com.epam.training.student_anton_marhol.framework_practical_task.util.TestListener;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
+@Listeners({TestListener.class})
 public class CommonConditions {
 
     public static String yopmailMail;
@@ -16,11 +19,11 @@ public class CommonConditions {
 
     @BeforeClass(alwaysRun = true)
     public void browserSetup() {
-        driver= CreateDriver.getDriver();
+        driver= DriverSingleton.getDriver();
     }
 
     @AfterClass(alwaysRun = true)
     public void browserShutDown() {
-        CreateDriver.closeDriver();
+        DriverSingleton.closeDriver();
     }
 }
