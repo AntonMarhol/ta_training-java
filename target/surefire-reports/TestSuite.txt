@@ -1,18 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 51.579 s <<< FAILURE! - in TestSuite
-browserSetupTest(com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest)  Time elapsed: 34.79 s  <<< FAILURE!
-org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for invisibility of [[FirefoxDriver: firefox on WINDOWS (e07f9b03-c065-4b69-9aae-cb54e16a0ddd)] -> xpath: //md-option/child::div[contains(text(),'N1')]] (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'LAPTOP-T7K377GD', ip: '192.168.71.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.1, moz:accessibilityChecks: false, moz:buildID: 20220922151854, moz:debuggerAddress: 127.0.0.1:52976, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 11568, moz:profile: C:\Users\HP\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:52976/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e07f9b03-c065-4b69-9aae-cb54e16a0ddd
-	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:22)
-
-totalEstimatedCostTest(com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest)  Time elapsed: 0.252 s  <<< FAILURE!
-java.lang.NullPointerException: null value in entry: handle=null
-	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.totalEstimatedCostTest(GoogleCloudPricingCalculatorTest.java:43)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.197 s - in TestSuite
