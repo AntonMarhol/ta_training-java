@@ -11,10 +11,10 @@ public class PastebinHomePage extends ParentPage{
             super(driver);
         }
 
-        public FillFieldsOnPastebinHomePage openPage() {
+        public FieldsOnPastebinHomePage openPage() {
             driver.get(HOME_PAGE_URL);
             new WebDriverWait(driver, BASE_WAIT_TIME).until(CustomConditions.jQueryAJAXsCompleted());
 
-            return new FillFieldsOnPastebinHomePage(driver);
+            return new FieldsOnPastebinHomePage(driver);
         }
 }

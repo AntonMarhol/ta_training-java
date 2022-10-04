@@ -34,7 +34,7 @@ public class PastebinTest {
 
     @Test
     public void pasteNameTitleTest() {
-        Assert.assertEquals(TITLE_NAME, pastebinResultPage.tittleName());
+        Assert.assertEquals(pastebinResultPage.tittleName(), TITLE_NAME);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class PastebinTest {
 
     @Test
     public void textContentsTest() {
-        Assert.assertEquals(TEXT, pastebinResultPage.textContent());
+        Assert.assertEquals(pastebinResultPage.textContent(), TEXT);
     }
 
     @AfterClass(alwaysRun = true)

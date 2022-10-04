@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FillFieldsOnPastebinHomePage  extends ParentPage{
+public class FieldsOnPastebinHomePage extends ParentPage{
 
     private static final String TEXT = "git config --global user.name  \"New Sheriff in Town\"\n" +
                                         "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
@@ -33,11 +33,11 @@ public class FillFieldsOnPastebinHomePage  extends ParentPage{
     @FindBy (xpath = "//button[@class='btn -big']")
     private WebElement buttonCreatePaste;
 
-    public FillFieldsOnPastebinHomePage(WebDriver driver) {
+    public FieldsOnPastebinHomePage(WebDriver driver) {
         super(driver);
     }
 
-    public FillFieldsOnPastebinHomePage fillFields () {
+    public FieldsOnPastebinHomePage fillFields () {
                                                                         //INSERT NEW PASTE TEXT
         formToFillTheText.sendKeys(TEXT);
                                                                         //SELECT SYNTAX HIGHLIGHTING
