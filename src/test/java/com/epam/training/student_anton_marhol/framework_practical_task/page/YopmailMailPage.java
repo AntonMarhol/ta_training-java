@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class YopmailMailPage extends ParentPage {
 
-    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']";
+    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Price Estimate']";
 
     @FindBy (id = "egen")
     WebElement generatedMail;
