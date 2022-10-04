@@ -42,7 +42,7 @@ public class GoogleCloudPricingCalculatorTest {
                 .fillTheSecondPartOfForm()
                 .pressTheButtonAddToEstimate();
 
-        Assert.assertEquals(BROWSER_TITLE,driver.getTitle());
+        Assert.assertEquals(driver.getTitle(), BROWSER_TITLE);
     }
 
     @Test
