@@ -16,16 +16,18 @@ public class PastebinTest {
 
     @BeforeClass(alwaysRun = true)
     public void browserSetup() {
-        driver = new PastebinHomePage(new ChromeDriver())
-                .openPage()
-                .fillFields()
-                .createNewPaste();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @Test
     public void createNewPasteOnPestebin() {
+        String pageTitle = new PastebinHomePage(driver)
+                .openPage()
+                .fillFields()
+                .createNewPaste();
 
-        Assert.assertEquals(TITLE,driver.getTitle());
+        Assert.assertEquals(pageTitle, TITLE);
     }
 
     @AfterClass(alwaysRun = true)

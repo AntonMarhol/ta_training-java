@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class FillFieldsOnPastebinHomePage {
+public class PastebinHomePageForm {
 
     private static final String TEXT = "Hello from WebDriver";
     private static final String NAME = "helloweb";
@@ -17,49 +17,46 @@ public class FillFieldsOnPastebinHomePage {
     private WebDriver driver;
 
     @FindBy (id = "postform-text")
-    private WebElement fillTheText;
+    private WebElement textForm;
 
     @FindBy (id = "select2-postform-expiration-container")
-    private WebElement selectExpiration;
+    private WebElement expirationDropDownList;
 
     @FindBy (xpath = "//li[text()='10 Minutes']")
-    private WebElement insertExpiration;
+    private WebElement expiration;
 
     @FindBy (id = "postform-name")
-    private WebElement pasteName;
+    private WebElement nameForm;
 
     @FindBy (xpath = "//button[@class='btn -big']")
-    private WebElement createPaste;
+    private WebElement buttonCreatePaste;
 
-    public FillFieldsOnPastebinHomePage(WebDriver driver) {
-
+    public PastebinHomePageForm(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public FillFieldsOnPastebinHomePage fillFields () {
+    public PastebinHomePageForm fillFields () {
+        waitForElementToBeClickable(textForm);
+        textForm.sendKeys(TEXT);
 
-        waitForElementToBeClickable(fillTheText);
-        fillTheText.sendKeys(TEXT);
+        waitForElementToBeClickable(expirationDropDownList);
+        expirationDropDownList.click();
 
-        waitForElementToBeClickable(selectExpiration);
-        selectExpiration.click();
+        waitForElementToBeClickable(expiration);
+        expiration.click();
 
-        waitForElementToBeClickable(insertExpiration);
-        insertExpiration.click();
-
-        waitForElementToBeClickable(pasteName);
-        pasteName.sendKeys(NAME);
+        waitForElementToBeClickable(nameForm);
+        nameForm.sendKeys(NAME);
 
         return this;
     }
 
-    public WebDriver createNewPaste () {
+    public String createNewPaste () {
+        waitForElementToBeClickable(buttonCreatePaste);
+        buttonCreatePaste.click();
 
-        waitForElementToBeClickable(createPaste);
-        createPaste.click();
-
-        return driver;
+        return driver.getTitle();
     }
 
     private void waitForElementToBeClickable(WebElement element){

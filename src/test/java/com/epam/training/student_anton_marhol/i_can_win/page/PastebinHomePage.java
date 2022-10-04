@@ -11,10 +11,10 @@ public class PastebinHomePage {
         this.driver = driver;
     }
 
-    public FillFieldsOnPastebinHomePage openPage() {
+    public PastebinHomePageForm openPage() {
 
         driver.get(HOME_PAGE_URL);
 
-        return new FillFieldsOnPastebinHomePage(driver);
+        return new PastebinHomePageForm(driver);
     }
 }
