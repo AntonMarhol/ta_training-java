@@ -23,8 +23,8 @@ public class ParentPage {
     protected static final String INBOX_FRAME_OF_YOPMAIL_INBOX = "ifinbox";
 
     static String yopmailMail;
-    static String googleCloudWindow;
-    static String yopmailWindow;
+    static String googleCloudTab;
+    static String yopmailTab;
 
     protected final WebDriver driver;
 
@@ -55,5 +55,13 @@ public class ParentPage {
     protected void waitForPresenceElementByXpath(String selectorForElement){
         new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectorForElement)));
+    }
+
+    protected void switchToMyframeOfPricingCalculator(){
+        driver.switchTo().defaultContent();
+        new WebDriverWait(driver, LONG_WAIT_TIME)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(ZERO_FRAME_OF_PRICING_CALCULATOR));
+        new WebDriverWait(driver, BASE_WAIT_TIME)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(MYFRAME_FRAME_OF_PRICING_CALCULATOR)));
     }
 }

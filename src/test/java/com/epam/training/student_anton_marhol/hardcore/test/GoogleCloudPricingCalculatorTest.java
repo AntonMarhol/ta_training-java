@@ -2,6 +2,7 @@ package com.epam.training.student_anton_marhol.hardcore.test;
 
 import com.epam.training.student_anton_marhol.hardcore.page.ResultPage;
 import com.epam.training.student_anton_marhol.hardcore.page.GoogleCloudHomePage;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -14,12 +15,10 @@ public class GoogleCloudPricingCalculatorTest {
     private static final String BROWSER_TITLE = "Inbox";
 
     ResultPage resultPage;
-
     WebDriver driver;
 
     @BeforeClass(alwaysRun = true)
     public void browserSetup() {
-
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -27,7 +26,7 @@ public class GoogleCloudPricingCalculatorTest {
     @Test
     public void browserSetupTest() {
 
-        driver = new GoogleCloudHomePage(driver)
+        resultPage = new GoogleCloudHomePage(driver)
                 .openPage()
                 .searchOnHomePage()
                 .lookingForPricingCalculatorInSearchResult()
@@ -42,7 +41,7 @@ public class GoogleCloudPricingCalculatorTest {
                 .goToTheMailBox()
                 .checkForLetter();
 
-        Assert.assertEquals(driver.getTitle(),BROWSER_TITLE);
+        Assert.assertEquals(resultPage.getYopmailTabTitle(),BROWSER_TITLE);
     }
 
     @Test
@@ -50,7 +49,7 @@ public class GoogleCloudPricingCalculatorTest {
 
         resultPage = new ResultPage(driver);
 
-        Assert.assertEquals(resultPage.lookForEstimatedCostInMail(),resultPage.lookForTotalEstimatedCostInPricingCalculator());
+        Assert.assertEquals(resultPage.getEstimatedCostInMail(),resultPage.getEstimatedCostInPricingCalculator());
     }
 
     @AfterClass(alwaysRun = true)

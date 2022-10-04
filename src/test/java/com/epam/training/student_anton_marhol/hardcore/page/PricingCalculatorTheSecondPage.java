@@ -8,34 +8,34 @@ import org.openqa.selenium.support.FindBy;
 public class PricingCalculatorTheSecondPage extends ParentPage {
                                                              // CLICK TO SELECT DATA IN FORM
     @FindBy (id = "select_463")
-    WebElement clickToClickToSelectGPUType;
+    WebElement typeOfGPUDropDownList;
 
     @FindBy (id = "select_465")
-    WebElement clickToSelectNumberOfGPU;
+    WebElement numberOfGPUDropDownList;
 
     @FindBy (id = "select_value_label_419")
-    WebElement clickToSelectLocalSSD;
+    WebElement localSSDDropDownList;
 
     @FindBy (id = "select_value_label_88")
-    WebElement clickToSelectDatacenterLocation;
+    WebElement datacenterLocationDropDownList;
 
     @FindBy (id = "select_value_label_89")
-    WebElement clickToCommittedUsage;
+    WebElement committedUsageDropDownList;
                                                                     // SELECT DATA TO FILL
     @FindBy(xpath = "//md-option[@id='select_option_470']")
-    WebElement selectGPUType;
+    WebElement typeOfGPU;
 
     @FindBy (xpath = "//md-option[@id='select_option_474']")
-    WebElement selectNumberOfGPU;
+    WebElement numberOfGPU;
 
     @FindBy (xpath = "//md-option[@id='select_option_446']")
-    WebElement selectLocalSSD;
+    WebElement localSSD;
 
     @FindBy (xpath = "//md-option[@id='select_option_228']")
-    WebElement selectDatacenterLocation;
+    WebElement datacenterLocation;
 
     @FindBy (xpath = "//md-option[@id='select_option_128']")
-    WebElement selectCommittedUsage;
+    WebElement committedUsage;
                                                                         // BUTTON AND CHECK-BOX
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']/div")
     WebElement checkBoxAddGPUs;
@@ -54,15 +54,15 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
             executor.executeScript("arguments[0].click();", checkBoxAddGPUs);
         }
                                                                                // SELECT GPUs TYPE
-        setElement(clickToClickToSelectGPUType, selectGPUType);
+        setElement(typeOfGPUDropDownList, typeOfGPU);
                                                                                 // SELECT NUMBER OF GPUs
-        setElement(clickToSelectNumberOfGPU, selectNumberOfGPU);
+        setElement(numberOfGPUDropDownList, numberOfGPU);
                                                                                // SELECT LOCAL SSD
-        setElement(clickToSelectLocalSSD,selectLocalSSD);
+        setElement(localSSDDropDownList, localSSD);
                                                                               // SELECT DATACENTER LOCATION (REGION)
-        setElement(clickToSelectDatacenterLocation,selectDatacenterLocation);
+        setElement(datacenterLocationDropDownList, datacenterLocation);
                                                                              // SELECT COMMITTED USAGE (COMMITMENT TERM)
-        setElement(clickToCommittedUsage,selectCommittedUsage);
+        setElement(committedUsageDropDownList, committedUsage);
 
     return this;
 }

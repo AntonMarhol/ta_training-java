@@ -6,17 +6,17 @@ import org.openqa.selenium.support.FindBy;
 
 public class SendEstimateByMailPage extends ParentPage{
 
-    private static final String SEND_ESTIMATE_BY_MAIL_LOCATOR = "email_quote";
-    private static final String INPUT_EMAIL_FIELD = "//label[text()='Email ']/following-sibling::input";
+    private static final String BUTTON_SEND_ESTIMATE_BY_MAIL_LOCATOR = "email_quote";
+    private static final String FIELD_TO_INPUT_EMAIL_XPATH = "//label[text()='Email ']/following-sibling::input";
 
     @FindBy (xpath = "//div[@class='md-dialog-container ng-scope']/child::md-dialog/child::form/child::md-dialog-actions/child::button[@class='md-raised md-primary cpc-button md-button md-ink-ripple']")
     WebElement buttonSendByMail;
 
-    @FindBy (id = SEND_ESTIMATE_BY_MAIL_LOCATOR)
-    WebElement clickToSendByMail;
+    @FindBy (id = BUTTON_SEND_ESTIMATE_BY_MAIL_LOCATOR)
+    WebElement buttonOpenMailAddressForm;
 
-    @FindBy (xpath = INPUT_EMAIL_FIELD)
-    WebElement insertMail;
+    @FindBy (xpath = FIELD_TO_INPUT_EMAIL_XPATH)
+    WebElement fieldForInsertMail;
 
     public SendEstimateByMailPage(WebDriver driver){
         super(driver);
@@ -24,23 +24,21 @@ public class SendEstimateByMailPage extends ParentPage{
 
     public YopmailHomePage selectOptionSendByEmail(){
 
-        waitForPresenceElementById(SEND_ESTIMATE_BY_MAIL_LOCATOR);
-        clickToSendByMail.click();
-        googleCloudWindow = driver.getWindowHandle();
+        waitForPresenceElementById(BUTTON_SEND_ESTIMATE_BY_MAIL_LOCATOR);
+        buttonOpenMailAddressForm.click();
+        googleCloudTab = driver.getWindowHandle();
 
         return new YopmailHomePage(driver);
     }
 
     public YopmailMailPage sendByEmail() {
 
-        driver.switchTo().window(googleCloudWindow);
+        driver.switchTo().window(googleCloudTab);
 
-        driver.switchTo().defaultContent();
-        driver.switchTo().frame(ZERO_FRAME_OF_PRICING_CALCULATOR);
-        driver.switchTo().frame(MYFRAME_FRAME_OF_PRICING_CALCULATOR);
+        switchToMyframeOfPricingCalculator();
 
-        waitForPresenceElementByXpath(INPUT_EMAIL_FIELD);
-        insertMail.sendKeys(yopmailMail);
+        waitForPresenceElementByXpath(FIELD_TO_INPUT_EMAIL_XPATH);
+        fieldForInsertMail.sendKeys(yopmailMail);
 
         buttonSendByMail.click();
 

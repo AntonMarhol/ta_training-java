@@ -9,16 +9,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class YopmailMailPage extends ParentPage{
 
-    private static final String LETTER_FROM_GOOGLE_CLOUD = "//span[text()='Google Cloud Sales']";
+    private static final String LETTER_FROM_GOOGLE_CLOUD = "//div[text()='Google Cloud Price Estimate']";
 
     @FindBy (id = "egen")
     WebElement generatedMail;
 
     @FindBy (xpath = "//span[text()='Check Inbox']")
-    WebElement checkInBox;
+    WebElement buttonCheckInBox;
 
     @FindBy (id = "refresh")
-    WebElement refreshMail;
+    WebElement buttonRefreshMail;
 
     public YopmailMailPage(WebDriver driver) {
         super(driver);
@@ -33,16 +33,16 @@ public class YopmailMailPage extends ParentPage{
 
     public YopmailMailPage goToTheMailBox() {
 
-        driver.switchTo().window(yopmailWindow);
-        checkInBox.click();
+        driver.switchTo().window(yopmailTab);
+        buttonCheckInBox.click();
 
         return this;
     }
 
-    public WebDriver checkForLetter(){
+    public ResultPage checkForLetter(){
 
         driver.switchTo().defaultContent();
-        refreshMail.click();
+        buttonRefreshMail.click();
 
         waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
 
@@ -50,16 +50,14 @@ public class YopmailMailPage extends ParentPage{
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
         catch (TimeoutException exception) {
-
             driver.switchTo().defaultContent();
-            refreshMail.click();
+            buttonRefreshMail.click();
 
             waitForFrameAndSwitchToIt(INBOX_FRAME_OF_YOPMAIL_INBOX);
-
             waitForPresenceElementByXpath(LETTER_FROM_GOOGLE_CLOUD);
         }
 
-        return driver;
+        return new ResultPage(driver);
     }
 
     protected void waitForFrameAndSwitchToIt(String frame){
