@@ -5,7 +5,6 @@ import static com.epam.training.student_anton_marhol.framework_practical_task.ut
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class PricingCalculatorTheSecondPage extends ParentPage {
@@ -63,10 +62,10 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     return this;
 }
 
-    public SendEstimateByMailPage pressTheButtonAddToEstimate(){
+    public WorkWithMailPage pressTheButtonAddToEstimate(){
         buttonAddToEstimate.click();
         logger.info("Added to Estimate");
-        return new SendEstimateByMailPage(driver);
+        return new WorkWithMailPage(driver);
     }
 }
 

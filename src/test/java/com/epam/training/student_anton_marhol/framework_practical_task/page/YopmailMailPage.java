@@ -35,9 +35,9 @@ public class YopmailMailPage extends ParentPage {
         return new YopmailMailPage(driver);
     }
 
-    public SendEstimateByMailPage backToPricingCalculatorTab(){
+    public WorkWithMailPage backToPricingCalculatorTab(){
         logger.info("Back to Pricing Calculator tab from Yopmail tab");
-        return new SendEstimateByMailPage(driver);
+        return new WorkWithMailPage(driver);
     }
 
     public YopmailMailPage goToTheMailBox() {
