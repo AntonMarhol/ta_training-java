@@ -2,6 +2,7 @@
 <testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2022-10-04T07:15:57Z" name="Framework functional tests" finished-at="2022-10-04T07:16:46Z" duration-ms="49401">
     <groups>
     </groups>
@@ -34,6 +35,23 @@ at com.epam.training.student_anton_marhol.framework_practical_task.page.ParentPa
 at com.epam.training.student_anton_marhol.framework_practical_task.page.ParentPage.setNewElement(ParentPage.java:53)
 at com.epam.training.student_anton_marhol.framework_practical_task.page.PricingCalculatorTheFirstPage.fillTheFisrstPartOfForm(PricingCalculatorTheFirstPage.java:48)
 at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:22)
+=======
+  <suite started-at="2022-10-04T06:44:44Z" name="Framework functional tests" finished-at="2022-10-04T06:44:51Z" duration-ms="7347">
+    <groups>
+    </groups>
+    <test started-at="2022-10-04T06:44:44Z" name="Framework functional tests" finished-at="2022-10-04T06:44:51Z" duration-ms="7347">
+      <class name="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T06:44:44Z" name="browserSetup" finished-at="2022-10-04T06:44:50Z" duration-ms="6282" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method signature="browserSetupTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T06:44:50Z" name="browserSetupTest" finished-at="2022-10-04T06:44:50Z" duration-ms="15" status="FAIL">
+          <exception class="java.lang.ExceptionInInitializerError">
+            <full-stacktrace>
+              <![CDATA[java.lang.ExceptionInInitializerError
+at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesCreator.withCredentialsFromProperties(InstancesCreator.java:21)
+at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:16)
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -63,6 +81,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader
 at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+<<<<<<< HEAD
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
@@ -70,6 +89,24 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
           </reporter-output>
         </test-method> <!-- browserSetupTest -->
         <test-method signature="totalEstimatedCostTest()[pri:1, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:16:42Z" name="totalEstimatedCostTest" finished-at="2022-10-04T07:16:42Z" duration-ms="3" status="FAIL">
+=======
+Caused by: java.lang.NullPointerException
+at java.base/java.util.ResourceBundle$CacheKey.hashCode(ResourceBundle.java:744)
+at java.base/java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936)
+at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1629)
+at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1593)
+at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1556)
+at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:857)
+at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesReader.<clinit>(InstancesReader.java:7)
+... 31 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ExceptionInInitializerError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserSetupTest -->
+        <test-method signature="totalEstimatedCostTest()[pri:1, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T06:44:51Z" name="totalEstimatedCostTest" finished-at="2022-10-04T06:44:51Z" duration-ms="15" status="FAIL">
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[null value in entry: handle=null]]>
@@ -119,7 +156,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- totalEstimatedCostTest -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:16:42Z" name="browserShutDown" finished-at="2022-10-04T07:16:46Z" duration-ms="4044" status="PASS">
+=======
+        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T06:44:51Z" name="browserShutDown" finished-at="2022-10-04T06:44:51Z" duration-ms="704" status="PASS">
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserShutDown -->

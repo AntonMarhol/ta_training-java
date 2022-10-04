@@ -57,9 +57,15 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
+<<<<<<< HEAD
 <td>Started on:</td><td>Tue Oct 04 11:15:57 GET 2022</td>
 </tr>
 <tr><td>Total time:</td><td>49 seconds (49401 ms)</td>
+=======
+<td>Started on:</td><td>Tue Oct 04 10:44:44 GET 2022</td>
+</tr>
+<tr><td>Total time:</td><td>7 seconds (7347 ms)</td>
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,6 +82,7 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest()'><b>browserSetupTest</b><br>Test class: com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</td>
+<<<<<<< HEAD
 <td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[FirefoxDriver: firefox on WINDOWS (eaa73729-b05d-4831-9599-4d40ba4b2ca2)] -&gt; xpath: //md-option/child::div[contains(text(),&apos;N1&apos;)]] (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;LAPTOP-T7K377GD&apos;, ip: &apos;192.168.71.41&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
@@ -101,6 +108,24 @@ Session ID: eaa73729-b05d-4831-9599-4d40ba4b2ca2
 	at com.epam.training.student_anton_marhol.framework_practical_task.page.ParentPage.setNewElement(ParentPage.java:53)
 	at com.epam.training.student_anton_marhol.framework_practical_task.page.PricingCalculatorTheFirstPage.fillTheFisrstPartOfForm(PricingCalculatorTheFirstPage.java:48)
 	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:22)
+=======
+<td><div><pre>java.lang.ExceptionInInitializerError
+	at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesCreator.withCredentialsFromProperties(InstancesCreator.java:21)
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:16)
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.ResourceBundle$CacheKey.hashCode(ResourceBundle.java:744)
+	at java.base/java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1629)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1593)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1556)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:857)
+	at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesReader.&lt;clinit&gt;(InstancesReader.java:7)
+	... 31 more
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1184965604", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1184965604'><pre>java.lang.ExceptionInInitializerError
+	at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesCreator.withCredentialsFromProperties(InstancesCreator.java:21)
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:16)
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,8 +155,22 @@ Session ID: eaa73729-b05d-4831-9599-4d40ba4b2ca2
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+<<<<<<< HEAD
 </pre></div></td>
 <td>33</td>
+=======
+Caused by: java.lang.NullPointerException
+	at java.base/java.util.ResourceBundle$CacheKey.hashCode(ResourceBundle.java:744)
+	at java.base/java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1629)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1593)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1556)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:857)
+	at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesReader.&lt;clinit&gt;(InstancesReader.java:7)
+	... 31 more
+</pre></div></td>
+<td>0</td>
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 <td>com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e</td></tr>
 <tr>
 <td title='com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.totalEstimatedCostTest()'><b>totalEstimatedCostTest</b><br>Test class: com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</td>
@@ -144,8 +183,13 @@ Session ID: eaa73729-b05d-4831-9599-4d40ba4b2ca2
 	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.window(RemoteWebDriver.java:1084)
 	at com.epam.training.student_anton_marhol.framework_practical_task.page.ResultPage.lookForTotalEstimatedCostInMail(ResultPage.java:31)
 	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.totalEstimatedCostTest(GoogleCloudPricingCalculatorTest.java:43)
+<<<<<<< HEAD
 ... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2090953436", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
 <div class='stack-trace' id='stack-trace2090953436'><pre>java.lang.NullPointerException: null value in entry: handle=null
+=======
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace436126678", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace436126678'><pre>java.lang.NullPointerException: null value in entry: handle=null
+>>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
 	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
 	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
