@@ -21,19 +21,19 @@ public class GoogleCloudPricingCalculatorTest {
     private static final String BROWSER_TITLE = "Google Cloud Pricing Calculator";
 
     EstimateResultPage estimateResultPage;
-
     WebDriver driver;
 
     @BeforeClass(alwaysRun = true)
     public void browserSetup() {
 
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @Test
     public void browserSetupTest(){
 
-        driver = new GoogleCloudHomePage(driver)
+        estimateResultPage = new GoogleCloudHomePage(driver)
                 .openPage()
                 .searchOnHomePage()
                 .lookingForPricingCalculatorInSearchResult()
@@ -41,8 +41,6 @@ public class GoogleCloudPricingCalculatorTest {
                 .fillTheFisrstPartOfForm()
                 .fillTheSecondPartOfForm()
                 .pressTheButtonAddToEstimate();
-
-        estimateResultPage = new EstimateResultPage(driver);
 
         Assert.assertEquals(BROWSER_TITLE,driver.getTitle());
     }

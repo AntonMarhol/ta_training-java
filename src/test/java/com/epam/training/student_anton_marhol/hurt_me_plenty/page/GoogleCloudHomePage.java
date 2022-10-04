@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class GoogleCloudHomePage extends ParentPage{
 
     private static final String HOMEPAGE_URL = "https://cloud.google.com/";
@@ -31,7 +29,7 @@ public class GoogleCloudHomePage extends ParentPage{
 
     public SearchResultsPage searchOnHomePage() {
 
-        new WebDriverWait(driver, Duration.ofSeconds(30L))
+        new WebDriverWait(driver, LONG_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(SEARCH_FIELD_XPATH)));
         searchField.sendKeys(SEARCH_TEXT);
         searchField.submit();

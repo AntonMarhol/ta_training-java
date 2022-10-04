@@ -1,17 +1,13 @@
 package com.epam.training.student_anton_marhol.hurt_me_plenty.page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class PricingCalculatorTheFirstPage extends ParentPage{
-
                                                 // find the first frame
     private static final int LOCATOR_FOR_FRAME_BY_NUMBER = 0;
                                                 // find the frame to fill the form
@@ -19,35 +15,33 @@ public class PricingCalculatorTheFirstPage extends ParentPage{
 
     private static final String TAB_COMPUTE_ENGINE_XPATH = "//div[@class='tab-holder compute']";
     private static final String NUMBER_OF_INSTANCES = "4";
-
                                                             // CLICK TO SELECT DATA IN FORM
     @FindBy (id = "select_value_label_82")
-    WebElement clickToSelectOS;
+    WebElement operationSystemDropDownList;
 
     @FindBy (id = "select_value_label_83")
-    WebElement clickToSelectProvisioningModel;
+    WebElement provisioningModelDropDownList;
 
     @FindBy (id = "select_value_label_85")
-    WebElement clickToSelectSeriesOfMachine;
+    WebElement seriesOfMachineDropDownList;
 
     @FindBy (id = "select_value_label_86")
-    WebElement clickToSelectMachineType;
+    WebElement machineTypeDropDownList;
                                                                     // SELECT DATA TO FILL
     @FindBy (id = "input_90")
-    WebElement selectNumberOfInstances;
+    WebElement numberOfInstances;
 
     @FindBy (xpath = "//md-option[@id='select_option_92']")
-    WebElement selectOS;
+    WebElement operationSystem;
 
     @FindBy (xpath = "//md-option[@id='select_option_105']")
-    WebElement selectProvisioningModel;
+    WebElement provisioningModel;
 
     @FindBy (xpath = "//md-option[@id='select_option_201']")
-    WebElement selectSeriesOfMachine;
+    WebElement seriesOfMachine;
 
     @FindBy (xpath = "//md-option[@id='select_option_425']")
-    WebElement selectMachineType;
-
+    WebElement machineType;
 
     public PricingCalculatorTheFirstPage(WebDriver driver) {
         super(driver);
@@ -55,9 +49,9 @@ public class PricingCalculatorTheFirstPage extends ParentPage{
 
     public PricingCalculatorTheFirstPage activateTabHolder() {
 
-        new WebDriverWait(driver, Duration.ofSeconds(30))
+        new WebDriverWait(driver, LONG_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(LOCATOR_FOR_FRAME_BY_NUMBER));
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(LOCATOR_FOR_FRAME_BY_ID)));
         driver.findElement(By.xpath(TAB_COMPUTE_ENGINE_XPATH)).click();
 
@@ -66,17 +60,15 @@ public class PricingCalculatorTheFirstPage extends ParentPage{
 
     public PricingCalculatorTheSecondPage fillTheFisrstPartOfForm(){
 
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-
-        selectNumberOfInstances.sendKeys(NUMBER_OF_INSTANCES);
+        numberOfInstances.sendKeys(NUMBER_OF_INSTANCES);
                                                                             // SELECT OS
-        setElement(clickToSelectOS,selectOS,executor);
+        setElement(operationSystemDropDownList, operationSystem);
                                                                             // SELECT PROVISIONING MODEL
-        setElement(clickToSelectProvisioningModel,selectProvisioningModel,executor);
+        setElement(provisioningModelDropDownList, provisioningModel);
                                                                             // SELECT SERIES OF MACHINE
-        setElement(clickToSelectSeriesOfMachine,selectSeriesOfMachine,executor);
+        setElement(seriesOfMachineDropDownList, seriesOfMachine);
                                                                             // SELECT MACHINE TYPE (INSTANCE TYPE)
-        setElement(clickToSelectMachineType,selectMachineType,executor);
+        setElement(machineTypeDropDownList, machineType);
 
         return new PricingCalculatorTheSecondPage(driver);
     }

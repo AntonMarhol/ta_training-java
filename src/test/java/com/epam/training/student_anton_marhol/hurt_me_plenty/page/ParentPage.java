@@ -11,6 +11,10 @@ import java.time.Duration;
 
 public class ParentPage {
 
+    protected static final Duration LONG_WAIT_TIME = Duration.ofSeconds(30);
+    protected static final Duration BASE_WAIT_TIME = Duration.ofSeconds(10);
+    protected static final Duration SHORT_WAIT_TIME = Duration.ofSeconds(5);
+
     protected final WebDriver driver;
 
     public ParentPage(WebDriver driver) {
@@ -18,7 +22,9 @@ public class ParentPage {
         PageFactory.initElements(driver,this);
     }
 
-    protected void setElement(WebElement clickElement, WebElement selectElement, JavascriptExecutor executor){
+    protected void setElement(WebElement clickElement, WebElement selectElement){
+
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
 
         clickElement.click();
         executor.executeScript("arguments[0].click();", selectElement);
@@ -27,7 +33,7 @@ public class ParentPage {
 
     protected void waitForElementInvisibility(WebDriver driver, WebElement element){
 
-        new WebDriverWait(driver, Duration.ofSeconds(2))
+        new WebDriverWait(driver, SHORT_WAIT_TIME)
                 .until(ExpectedConditions.invisibilityOf(element));
     }
 }
