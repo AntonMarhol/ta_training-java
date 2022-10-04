@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 47.244 s - in TestSuite
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 8.894 s <<< FAILURE! - in TestSuite
+browserSetupTest(com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest)  Time elapsed: 0.161 s  <<< FAILURE!
+java.lang.ExceptionInInitializerError
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:16)
+Caused by: java.lang.NullPointerException
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:16)
+
+totalEstimatedCostTest(com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest)  Time elapsed: 0.17 s  <<< FAILURE!
+java.lang.NullPointerException: null value in entry: handle=null
+	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.totalEstimatedCostTest(GoogleCloudPricingCalculatorTest.java:43)
+
