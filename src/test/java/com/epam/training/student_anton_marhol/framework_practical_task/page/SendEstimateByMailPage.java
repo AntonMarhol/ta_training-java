@@ -27,12 +27,6 @@ public class SendEstimateByMailPage extends ParentPage {
 
     public YopmailHomePage selectOptionSendByEmail(){
         waitForPresenceElementById(BUTTON_TO_INSERT_MAIL_ADDRESS_LOCATOR);
-<<<<<<< HEAD
-=======
-//        new Actions(driver)
-//                .scrollToElement(buttonOpenMailAddressForm)
-//                .perform();
->>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
         buttonOpenMailAddressForm.click();
         logger.info("Mail address form opened");
         googleCloudTab = driver.getWindowHandle();

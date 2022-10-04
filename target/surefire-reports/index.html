@@ -133,33 +133,18 @@
                   <a name="browserSetupTest">
                   </a> <!-- browserSetupTest -->
                   <span class="method-name">browserSetupTest</span>
-<<<<<<< HEAD
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[FirefoxDriver: firefox on WINDOWS (eaa73729-b05d-4831-9599-4d40ba4b2ca2)] -&gt; xpath: //md-option/child::div[contains(text(),&apos;N1&apos;)]] (tried for 5 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[FirefoxDriver: firefox on WINDOWS (e07f9b03-c065-4b69-9aae-cb54e16a0ddd)] -&gt; xpath: //md-option/child::div[contains(text(),&apos;N1&apos;)]] (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;LAPTOP-T7K377GD&apos;, ip: &apos;192.168.71.41&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.1, moz:accessibilityChecks: false, moz:buildID: 20220922151854, moz:debuggerAddress: 127.0.0.1:56418, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 4760, moz:profile: C:\Users\HP\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:56418/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: eaa73729-b05d-4831-9599-4d40ba4b2ca2
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 105.0.1, moz:accessibilityChecks: false, moz:buildID: 20220922151854, moz:debuggerAddress: 127.0.0.1:52976, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 11568, moz:profile: C:\Users\HP\AppData\Local\T..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://127.0.0.1:52976/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e07f9b03-c065-4b69-9aae-cb54e16a0ddd
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 	at com.epam.training.student_anton_marhol.framework_practical_task.page.ParentPage.waitForElementInvisibility(ParentPage.java:58)
 	at com.epam.training.student_anton_marhol.framework_practical_task.page.ParentPage.setNewElement(ParentPage.java:53)
 	at com.epam.training.student_anton_marhol.framework_practical_task.page.PricingCalculatorTheFirstPage.fillTheFisrstPartOfForm(PricingCalculatorTheFirstPage.java:48)
 	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:22)
-=======
-                  <div class="stack-trace">java.lang.ExceptionInInitializerError
-	at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesCreator.withCredentialsFromProperties(InstancesCreator.java:21)
-	at com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest.browserSetupTest(GoogleCloudPricingCalculatorTest.java:16)
-Caused by: java.lang.NullPointerException
-	at java.base/java.util.ResourceBundle$CacheKey.hashCode(ResourceBundle.java:744)
-	at java.base/java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936)
-	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1629)
-	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1593)
-	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1556)
-	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:857)
-	at com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesReader.&lt;clinit&gt;(InstancesReader.java:7)
-	... 31 more
->>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -240,28 +225,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'browserSetupTest')
 data.setCell(0, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-<<<<<<< HEAD
-data.setCell(0, 3, 33634);
+data.setCell(0, 3, 34533);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'totalEstimatedCostTest')
 data.setCell(1, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
 data.setCell(1, 3, 3);
-=======
-data.setCell(0, 3, 15);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'totalEstimatedCostTest')
-data.setCell(1, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-data.setCell(1, 3, 15);
->>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
 window.suiteTableData['Framework_functional_tests']= { tableData: data, tableDiv: 'times-div-Framework_functional_tests'}
 return data;
 }
               </script>
-<<<<<<< HEAD
-              <span class="suite-total-time">Total running time: 33 seconds</span>
-=======
-              <span class="suite-total-time">Total running time: 30 ms</span>
->>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
+              <span class="suite-total-time">Total running time: 34 seconds</span>
               <div id="times-div-Framework_functional_tests">
               </div> <!-- times-div-Framework_functional_tests -->
             </div> <!-- times-div -->
@@ -296,29 +269,17 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">browserSetupTest</span>
-<<<<<<< HEAD
-                <span class="method-start">11156 ms</span>
-=======
-                <span class="method-start">6282 ms</span>
->>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
+                <span class="method-start">11209 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">totalEstimatedCostTest</span>
-<<<<<<< HEAD
-                <span class="method-start">45077 ms</span>
+                <span class="method-start">45998 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">browserShutDown</span>
-                <span class="method-start">45357 ms</span>
-=======
-                <span class="method-start">6458 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">browserShutDown</span>
-                <span class="method-start">6628 ms</span>
->>>>>>> 76bda087ce1475a3b159fa232b114c6b89fc6f0c
+                <span class="method-start">46254 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

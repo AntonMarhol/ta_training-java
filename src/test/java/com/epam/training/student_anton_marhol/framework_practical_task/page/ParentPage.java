@@ -41,7 +41,7 @@ public class ParentPage {
     }
 
     protected void setNewElement(WebElement dropDownListElement, String locator){
-        scrollPageByAmount(0,100);
+//        scrollPageByAmount(0,100);
         dropDownListElement.click();
 
         waitForPresenceElementByXpath(locator);
