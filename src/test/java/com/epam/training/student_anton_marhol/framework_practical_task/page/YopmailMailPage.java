@@ -48,7 +48,7 @@ public class YopmailMailPage extends ParentPage {
     }
 
     public String isMailAdressCreated() {
-                                    // switching to default content because otherwise mailbox address will not be found
+                                    // switching to default content otherwise mailbox address will not be found
         driver.switchTo().defaultContent();
         logger.info("Email address caught in mailbox");
         return mailBoxAdress.getText();

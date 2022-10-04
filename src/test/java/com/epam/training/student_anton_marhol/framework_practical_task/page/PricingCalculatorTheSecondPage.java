@@ -13,7 +13,7 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     protected static final String NUMBER_OF_GPU_LOCATOR = "//*[@id='select_container_466']//child::div[contains(text(),'%s')]/..";
     protected static final String DATACENTER_LOCATION_LOCATOR = "//*[@id='select_container_124']//child::md-option/child::div[contains(text(),'%s')]/..";
     protected static final String COMMITTED_USAGE_LOCATOR = "//*[@id='select_container_131']//child::md-option/child::div[contains(text(),'%s')]/..";
-                                                             // CLICK TO SELECT DATA IN FORM
+                                                                      // CLICK TO OPEN DROP DOWN LIST
     @FindBy (id = "select_463")
     WebElement GPUTypeDropDownList;
 

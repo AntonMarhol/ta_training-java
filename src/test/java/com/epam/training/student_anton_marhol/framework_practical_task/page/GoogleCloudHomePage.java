@@ -19,7 +19,7 @@ public class GoogleCloudHomePage extends ParentPage {
 
     public GoogleCloudHomePage openPage() {
         driver.get(GOOGLE_CLOUD_URL);
-        logger.info(GOOGLE_CLOUD_URL + "opened");
+        logger.info(GOOGLE_CLOUD_URL + " opened");
         return this;
     }
 

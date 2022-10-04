@@ -45,7 +45,6 @@ public class ParentPage {
         dropDownListElement.click();
 
         waitForPresenceElementByXpath(locator);
-
         WebElement element = driver.findElement(By.xpath(locator));
         clickByJavaScript(element);
 

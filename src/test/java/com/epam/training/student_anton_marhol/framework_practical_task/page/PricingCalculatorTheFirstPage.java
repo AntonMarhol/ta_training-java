@@ -12,7 +12,7 @@ public class PricingCalculatorTheFirstPage extends ParentPage {
 
     private static final String TAB_COMPUTE_ENGINE_XPATH = "//div[@class='tab-holder compute']";
 
-                                                                    // CLICK TO SELECT DATA IN FORM
+                                                                    // CLICK TO OPEN DROP DOWN LIST
     @FindBy (id = "select_value_label_82")
     WebElement operationSystemDropDownList;
 
