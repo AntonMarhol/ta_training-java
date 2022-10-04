@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class PastebinResultPage  extends ParentPage{
 
     private static final String CSS_SELECTOR_FOR_TITLE_NAME = "h1";
@@ -24,8 +22,7 @@ public class PastebinResultPage  extends ParentPage{
     }
 
     public String tittleName () {
-
-        return new WebDriverWait(driver, Duration.ofSeconds(5))
+        return new WebDriverWait(driver, SHORT_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CSS_SELECTOR_FOR_TITLE_NAME)))
                 .getText();
     }
@@ -35,19 +32,18 @@ public class PastebinResultPage  extends ParentPage{
         waitForElementToBeClickable(buttonRAW);
         buttonRAW.click();
 
-        return new WebDriverWait(driver, Duration.ofSeconds(5))
+        return new WebDriverWait(driver, SHORT_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(CSS_SELECTOR_FOR_TEXT_CONTENT)))
                 .getText();
     }
 
     public Color colorOfText() {
-
-        return Color.fromString(new WebDriverWait(driver, Duration.ofSeconds(5))
+        return Color.fromString(new WebDriverWait(driver, SHORT_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(XPATH_SELECTOR_FOR_COLOR_OF_TEXT)))
                 .getCssValue("color"));
     }
 
     private void waitForElementToBeClickable(WebElement element){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+        new WebDriverWait(driver, BASE_WAIT_TIME).until(ExpectedConditions.elementToBeClickable(element));
     }
 }

@@ -3,10 +3,7 @@ package com.epam.training.student_anton_marhol.bring_it_on.page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class FillFieldsOnPastebinHomePage  extends ParentPage{
 
@@ -16,49 +13,48 @@ public class FillFieldsOnPastebinHomePage  extends ParentPage{
     private static final String NAME = "how to gain dominance among developers";
 
     @FindBy(id = "postform-text")
-    private WebElement fillTheText;
+    private WebElement formToFillTheText;
 
     @FindBy (id = "select2-postform-format-container")
-    private WebElement selectSyntaxHighlighting;
+    private WebElement syntaxHighlightingDropDownList;
 
     @FindBy (xpath = "//li[text()='Bash']")
-    private WebElement insertSyntaxHighlighting;
+    private WebElement bashSyntaxHighlighting;
 
     @FindBy (id = "select2-postform-expiration-container")
-    private WebElement selectExpiration;
+    private WebElement expirationTimeDropDownList;
 
     @FindBy (xpath = "//li[text()='10 Minutes']")
-    private WebElement insertExpiration;
+    private WebElement expirationTime;
 
     @FindBy (id = "postform-name")
-    private WebElement pasteName;
+    private WebElement formToFillName;
 
     @FindBy (xpath = "//button[@class='btn -big']")
-    private WebElement createPaste;
+    private WebElement buttonCreatePaste;
 
     public FillFieldsOnPastebinHomePage(WebDriver driver) {
         super(driver);
     }
 
     public FillFieldsOnPastebinHomePage fillFields () {
-
                                                                         //INSERT NEW PASTE TEXT
-        fillTheText.sendKeys(TEXT);
+        formToFillTheText.sendKeys(TEXT);
                                                                         //SELECT SYNTAX HIGHLIGHTING
-        selectElementAndInsert(selectSyntaxHighlighting,insertSyntaxHighlighting);
+        selectElementAndInsert(syntaxHighlightingDropDownList, bashSyntaxHighlighting);
                                                                         //SELECT EXPIRATION TIME
-        selectElementAndInsert(selectExpiration,insertExpiration);
+        selectElementAndInsert(expirationTimeDropDownList, expirationTime);
                                                                         //INSERT PASTE NAME
-        pasteName.sendKeys(NAME);
+        formToFillName.sendKeys(NAME);
 
         return this;
     }
 
-    public WebDriver createNewPaste () {
+    public PastebinResultPage createNewPaste () {
                                                                         //CREATE PASTE
-        createPaste.click();
-        new WebDriverWait(driver,Duration.ofSeconds(10)).until(CustomConditions.jQueryAJAXsCompleted());
+        buttonCreatePaste.click();
+        new WebDriverWait(driver,BASE_WAIT_TIME).until(CustomConditions.jQueryAJAXsCompleted());
 
-        return driver;
+        return new PastebinResultPage(driver);
     }
 }

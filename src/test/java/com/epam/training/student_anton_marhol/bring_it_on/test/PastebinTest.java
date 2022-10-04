@@ -6,7 +6,9 @@ import com.epam.training.student_anton_marhol.bring_it_on.page.PastebinHomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import org.openqa.selenium.support.Color;
 
 public class PastebinTest {
@@ -18,33 +20,30 @@ public class PastebinTest {
     private static final Color COLOR = Color.fromString("#c20cb9");
 
     WebDriver driver;
-
     PastebinResultPage pastebinResultPage;
 
     @BeforeClass(alwaysRun = true)
     public void browserSetup() {
-        driver = new PastebinHomePage(new ChromeDriver())
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        pastebinResultPage = new PastebinHomePage(driver)
                 .openPage()
                 .fillFields()
                 .createNewPaste();
-        pastebinResultPage = new PastebinResultPage(driver);
     }
 
     @Test
     public void pasteNameTitleTest() {
-
         Assert.assertEquals(TITLE_NAME, pastebinResultPage.tittleName());
     }
 
     @Test
     public void bashColoredTest() {
-
-        Assert.assertTrue(COLOR.equals(pastebinResultPage.colorOfText()));
+        Assert.assertEquals(pastebinResultPage.colorOfText(), COLOR);
     }
 
     @Test
     public void textContentsTest() {
-
         Assert.assertEquals(TEXT, pastebinResultPage.textContent());
     }
 
