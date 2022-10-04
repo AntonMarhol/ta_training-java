@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-04T07:48:47Z" name="Framework functional tests" finished-at="2022-10-04T07:49:29Z" duration-ms="41996">
+  <suite started-at="2022-10-04T07:56:06Z" name="Framework functional tests" finished-at="2022-10-04T07:56:51Z" duration-ms="44858">
     <groups>
     </groups>
-    <test started-at="2022-10-04T07:48:47Z" name="Framework functional tests" finished-at="2022-10-04T07:49:29Z" duration-ms="41996">
+    <test started-at="2022-10-04T07:56:06Z" name="Framework functional tests" finished-at="2022-10-04T07:56:51Z" duration-ms="44858">
       <class name="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:48:47Z" name="browserSetup" finished-at="2022-10-04T07:48:53Z" duration-ms="6031" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:56:06Z" name="browserSetup" finished-at="2022-10-04T07:56:13Z" duration-ms="6389" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="browserSetupTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:48:53Z" name="browserSetupTest" finished-at="2022-10-04T07:49:27Z" duration-ms="34567" status="PASS">
+        <test-method signature="browserSetupTest()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:56:13Z" name="browserSetupTest" finished-at="2022-10-04T07:56:50Z" duration-ms="37090" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetupTest -->
-        <test-method signature="totalEstimatedCostTest()[pri:1, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:49:27Z" name="totalEstimatedCostTest" finished-at="2022-10-04T07:49:27Z" duration-ms="303" status="PASS">
+        <test-method signature="totalEstimatedCostTest()[pri:1, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:56:50Z" name="totalEstimatedCostTest" finished-at="2022-10-04T07:56:50Z" duration-ms="242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- totalEstimatedCostTest -->
-        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:49:27Z" name="browserShutDown" finished-at="2022-10-04T07:49:29Z" duration-ms="1092" status="PASS">
+        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@31f9b85e]" started-at="2022-10-04T07:56:50Z" name="browserShutDown" finished-at="2022-10-04T07:56:51Z" duration-ms="1119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserShutDown -->
