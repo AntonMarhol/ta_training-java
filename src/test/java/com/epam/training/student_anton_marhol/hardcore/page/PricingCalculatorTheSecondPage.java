@@ -67,11 +67,11 @@ public class PricingCalculatorTheSecondPage extends ParentPage {
     return this;
 }
 
-    public SendEstimateByMailPage pressTheButtonAddToEstimate(){
+    public WorkWithMailPage pressTheButtonAddToEstimate(){
 
         buttonAddToEstimate.click();
 
-        return new SendEstimateByMailPage(driver);
+        return new WorkWithMailPage(driver);
     }
 }
 

@@ -24,11 +24,11 @@ public class YopmailMailPage extends ParentPage{
         super(driver);
     }
 
-    public SendEstimateByMailPage copyGeneratedMail() {
+    public WorkWithMailPage copyGeneratedMail() {
 
         yopmailMail = generatedMail.getText();
 
-        return new SendEstimateByMailPage(driver);
+        return new WorkWithMailPage(driver);
     }
 
     public YopmailMailPage goToTheMailBox() {

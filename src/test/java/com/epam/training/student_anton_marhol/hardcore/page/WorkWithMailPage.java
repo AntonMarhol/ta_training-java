@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SendEstimateByMailPage extends ParentPage{
+public class WorkWithMailPage extends ParentPage{
 
     private static final String BUTTON_SEND_ESTIMATE_BY_MAIL_LOCATOR = "email_quote";
     private static final String FIELD_TO_INPUT_EMAIL_XPATH = "//label[text()='Email ']/following-sibling::input";
@@ -18,7 +18,7 @@ public class SendEstimateByMailPage extends ParentPage{
     @FindBy (xpath = FIELD_TO_INPUT_EMAIL_XPATH)
     WebElement fieldForInsertMail;
 
-    public SendEstimateByMailPage(WebDriver driver){
+    public WorkWithMailPage(WebDriver driver){
         super(driver);
     }
 
