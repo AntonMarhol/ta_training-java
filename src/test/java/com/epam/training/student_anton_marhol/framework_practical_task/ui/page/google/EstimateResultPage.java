@@ -20,7 +20,7 @@ public class EstimateResultPage extends GoogleCloudParentPage {
         switchToTab(googleCloudTab, driver);
         switchToMyframeOfPricingCalculator(driver);
         return totalCostInPricingCalculator.getText()
-                .replaceFirst("Estimated Component Cost: ", "")
+                .replaceFirst("Total Estimated Cost: ", "")
                 .replaceFirst(" per 1 month", "");
     }
 

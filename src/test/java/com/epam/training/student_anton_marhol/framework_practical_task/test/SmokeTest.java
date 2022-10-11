@@ -6,7 +6,7 @@ import com.epam.training.student_anton_marhol.framework_practical_task.service.Y
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BasicFunctionTest extends CommonConditions {
+public class SmokeTest extends CommonConditions {
 
     @Test(description = "Check for Pricing calculator page will open and compare title")
     public void basicGoogleCloudFunction() {

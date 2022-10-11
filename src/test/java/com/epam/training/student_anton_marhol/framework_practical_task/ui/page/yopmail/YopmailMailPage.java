@@ -70,6 +70,7 @@ public class YopmailMailPage extends YopmailParentPage {
     public String getTotalEstimatedCostInMail() {
         switchToTab(yopmailTab, driver);
         driver.switchTo().frame(IFMAIL_FRAME_OF_YOPMAIL);
-        return totalCostInMail.getText();
+        return totalCostInMail.getText()
+                .replaceFirst("Total Estimated Cost: ", "");
     }
 }

@@ -5,6 +5,8 @@ import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.y
 
 import org.openqa.selenium.WebDriver;
 
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.FrameAndTabSwithers.switchToTab;
+
 public class YopmailMaker extends ServiceParentClass{
 
     public YopmailMaker(WebDriver driver) {
