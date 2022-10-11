@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 
 public class SmokeTest extends CommonConditions {
 
-    @Test(description = "Check for Pricing calculator page will open and compare title")
+    @Test(priority = 2, description = "Check for Pricing calculator page will open and compare title")
     public void basicGoogleCloudFunction() {
         PricingCalculatorMaker pricingCalculatorMaker = new PricingCalculatorMaker(driver);
         Assert.assertEquals(pricingCalculatorMaker.getTitleOfPage(driver), GOOGLE_CLOUD_TAB_TITLE, "Tab title is incorrect");
     }
 
-    @Test(description = "Compare generated email with email in the mail box ")
+    @Test(priority = 2, description = "Compare generated email with email in the mail box ")
     public void basicYopmailFunction() {
         YopmailMaker yopmailMaker = new YopmailMaker(driver);
         Assert.assertEquals(yopmailMaker.getYopmailEmailAddress(), yopmailMail, "Generated email is different from mail box email.");
