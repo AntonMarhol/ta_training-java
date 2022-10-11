@@ -1,35 +1,22 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.test;
 
-import com.epam.training.student_anton_marhol.framework_practical_task.page.GoogleCloudHomePage;
-import com.epam.training.student_anton_marhol.framework_practical_task.page.YopmailHomePage;
+import com.epam.training.student_anton_marhol.framework_practical_task.service.PricingCalculatorMaker;
+import com.epam.training.student_anton_marhol.framework_practical_task.service.YopmailMaker;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BasicFunctionTest extends CommonConditions{
+public class BasicFunctionTest extends CommonConditions {
 
-    @Test
-    public void basicGoogleCloudFunctionTest() {
-
-        String currentGooglePageTitle = new GoogleCloudHomePage(driver)
-                .openPage()
-                .searchOnHomePage()
-                .lookingForPricingCalculatorInSearchResult()
-                .getTitleOfCurrentPage();
-
-        Assert.assertEquals(currentGooglePageTitle, GOOGLE_CLOUD_TAB_TITLE);
+    @Test(description = "Check for Pricing calculator page will open and compare title")
+    public void basicGoogleCloudFunction() {
+        PricingCalculatorMaker pricingCalculatorMaker = new PricingCalculatorMaker(driver);
+        Assert.assertEquals(pricingCalculatorMaker.getTitleOfPage(driver), GOOGLE_CLOUD_TAB_TITLE, "Tab title is incorrect");
     }
 
-    @Test
-    public void basicYopmailFunctionTest() {
-
-        String currentMailAddress = new YopmailHomePage(driver)
-                .createYopmailTab()
-                .generateMail()
-                .copyGeneratedMail()
-                .goToTheMailBox()
-                .isMailAdressCreated();
-
-        Assert.assertEquals(currentMailAddress, yopmailMail);
+    @Test(description = "Compare generated email with email in the mail box ")
+    public void basicYopmailFunction() {
+        YopmailMaker yopmailMaker = new YopmailMaker(driver);
+        Assert.assertEquals(yopmailMaker.getYopmailEmailAddress(), yopmailMail, "Generated email is different from mail box email.");
     }
 }

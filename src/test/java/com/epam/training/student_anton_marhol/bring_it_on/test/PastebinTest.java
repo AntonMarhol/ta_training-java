@@ -19,35 +19,43 @@ public class PastebinTest {
                                         "git push origin master --force";
     private static final Color COLOR = Color.fromString("#c20cb9");
 
+    private static final String HIGHLIGHTING = "Bash";
+    private static final String EXPIRATION_TIME = "10 Minutes";
+
     WebDriver driver;
     PastebinResultPage pastebinResultPage;
 
-    @BeforeClass(alwaysRun = true)
+    @BeforeClass(description = "Opening Pastebin, filling the form and opening published Pastebin")
     public void browserSetup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         pastebinResultPage = new PastebinHomePage(driver)
                 .openPage()
-                .fillFields()
+                .fillTextField(TEXT)
+                .openHighlightingDropDownList()
+                .selectSyntaxHighlighting(HIGHLIGHTING)
+                .openExpirationTimeDropDownList()
+                .selectExpirationTime(EXPIRATION_TIME)
+                .fillNameInPostform(TITLE_NAME)
                 .createNewPaste();
     }
 
-    @Test
-    public void pasteNameTitleTest() {
-        Assert.assertEquals(pastebinResultPage.tittleName(), TITLE_NAME);
+    @Test (description = "Check for title name is correct")
+    public void pasteNameTitle() {
+        Assert.assertEquals(pastebinResultPage.getTittleName(), TITLE_NAME, "Tittle name in published Pastebin is wrong");
     }
 
-    @Test
-    public void bashColoredTest() {
-        Assert.assertEquals(pastebinResultPage.colorOfText(), COLOR);
+    @Test (description = "Check for bush colored text")
+    public void isBashColored() {
+        Assert.assertEquals(pastebinResultPage.getColorOfText(), COLOR, "There is no bush highlighting");
     }
 
-    @Test
-    public void textContentsTest() {
-        Assert.assertEquals(pastebinResultPage.textContent(), TEXT);
+    @Test (priority = 1, description = "Compare text to be not different from inserted")
+    public void textContents() {
+        Assert.assertEquals(pastebinResultPage.clickRawButton().getTextContent(), TEXT, "Content text is different from expected");
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true, description = "Close browser in all cases")
     public void browserShutDown() {
         driver.quit();
     }

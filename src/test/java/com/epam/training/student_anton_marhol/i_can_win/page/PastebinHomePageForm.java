@@ -1,65 +1,64 @@
 package com.epam.training.student_anton_marhol.i_can_win.page;
 
+import static com.epam.training.student_anton_marhol.i_can_win.util.LocatorCreator.BASE_LOCATOR;
+import static com.epam.training.student_anton_marhol.i_can_win.util.LocatorCreator.createXPath;
+import static com.epam.training.student_anton_marhol.i_can_win.util.Waitings.waitForElementToBeClickable;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class PastebinHomePageForm {
-
-    private static final String TEXT = "Hello from WebDriver";
-    private static final String NAME = "helloweb";
-
-    private WebDriver driver;
+public class PastebinHomePageForm extends ParentPage{
 
     @FindBy (id = "postform-text")
-    private WebElement textForm;
+    private WebElement textPostform;
 
     @FindBy (id = "select2-postform-expiration-container")
     private WebElement expirationDropDownList;
 
-    @FindBy (xpath = "//li[text()='10 Minutes']")
-    private WebElement expiration;
-
     @FindBy (id = "postform-name")
-    private WebElement nameForm;
+    private WebElement namePostform;
 
     @FindBy (xpath = "//button[@class='btn -big']")
-    private WebElement buttonCreatePaste;
+    private WebElement createPasteButton;
 
     public PastebinHomePageForm(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
-    public PastebinHomePageForm fillFields () {
-        waitForElementToBeClickable(textForm);
-        textForm.sendKeys(TEXT);
-
-        waitForElementToBeClickable(expirationDropDownList);
-        expirationDropDownList.click();
-
-        waitForElementToBeClickable(expiration);
-        expiration.click();
-
-        waitForElementToBeClickable(nameForm);
-        nameForm.sendKeys(NAME);
-
+    public PastebinHomePageForm fillTextForm(String text) {
+        waitForElementToBeClickable(textPostform, driver);
+        textPostform.sendKeys(text);
         return this;
     }
 
-    public String createNewPaste () {
-        waitForElementToBeClickable(buttonCreatePaste);
-        buttonCreatePaste.click();
-
-        return driver.getTitle();
+    public PastebinHomePageForm openExpirationDropDownList() {
+        waitForElementToBeClickable(expirationDropDownList, driver);
+        expirationDropDownList.click();
+        return this;
     }
 
-    private void waitForElementToBeClickable(WebElement element){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+    public PastebinHomePageForm insertExpiration(String expiration) {
+        WebElement element = driver.findElement(By.xpath(createXPath(BASE_LOCATOR, expiration)));
+        waitForElementToBeClickable(element, driver);
+        element.click();
+        return this;
+    }
+
+    public PastebinHomePageForm insertPasteName(String name) {
+        waitForElementToBeClickable(namePostform, driver);
+        namePostform.sendKeys(name);
+        return this;
+    }
+
+    public PastebinHomePageForm createNewPaste () {
+        waitForElementToBeClickable(createPasteButton, driver);
+        createPasteButton.click();
+        return this;
+    }
+
+    public String getPageTitle(){
+        return driver.getTitle();
     }
 }

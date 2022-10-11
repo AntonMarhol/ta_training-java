@@ -1,45 +1,29 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.test;
 
-import com.epam.training.student_anton_marhol.framework_practical_task.model.Instances;
-import com.epam.training.student_anton_marhol.framework_practical_task.page.GoogleCloudHomePage;
-import com.epam.training.student_anton_marhol.framework_practical_task.page.ResultPage;
-import com.epam.training.student_anton_marhol.framework_practical_task.service.InstancesCreator;
-
+import com.epam.training.student_anton_marhol.framework_practical_task.service.PricingCalculatorMaker;
+import com.epam.training.student_anton_marhol.framework_practical_task.service.YopmailMaker;
+import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.google.EstimateResultPage;
+import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail.YopmailMailPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GoogleCloudPricingCalculatorTest extends CommonConditions{
+public class GoogleCloudPricingCalculatorTest extends CommonConditions {
 
-    @Test
-    public void browserSetupTest() {
+    EstimateResultPage estimateResultPage;
 
-        Instances instances = InstancesCreator.withCredentialsFromProperties();
-        String currentMailAddress = new GoogleCloudHomePage(driver)
-                .openPage()
-                .searchOnHomePage()
-                .lookingForPricingCalculatorInSearchResult()
-                .activateTabHolder()
-                .fillTheFisrstPartOfForm(instances)
-                .fillTheSecondPartOfForm(instances)
-                .pressTheButtonAddToEstimate()
-                .selectOptionSendByEmail()
-                .createYopmailTab()
-                .generateMail()
-                .copyGeneratedMail()
-                .backToPricingCalculatorTab()
-                .sendByEmail()
-                .goToTheMailBox()
-                .checkForLetter()
-                .isMailAdressCreated();
-
-        Assert.assertEquals(currentMailAddress, yopmailMail);
+    @Test(description = "Fill the form and send estimate by email")
+    public void formSetup() {
+        estimateResultPage = PricingCalculatorMaker.fillTheForm(driver, instances);
+        Assert.assertEquals(estimateResultPage.getTitle(driver), GOOGLE_CLOUD_TAB_TITLE, "Tab title is incorrect");
     }
 
-    @Test (priority = 1)
-    public void totalEstimatedCostTest() {
+    @Test(priority = 1, description = "Compare generated email address and address in mail box")
+    public void mailAddress() {
+        Assert.assertEquals(new YopmailMaker(driver).getEmailAddressInLetter(), yopmailMail, "Generated email is different from mail box email.");
+    }
 
-        ResultPage resultPage = new ResultPage(driver);
-
-        Assert.assertEquals(resultPage.lookForTotalEstimatedCostInMail(),resultPage.lookForTotalEstimatedCostInPricingCalculator());
+    @Test(priority = 1, description = "Compare estimated cost in mail and on estimate page")
+    public void totalEstimatedCost() {
+        Assert.assertEquals(new YopmailMailPage(driver).getTotalEstimatedCostInMail(), estimateResultPage.getTotalEstimatedCostInPricingCalculator(), "Total cost in The Letter and in The Calculator is not the same.");
     }
 }
