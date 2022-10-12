@@ -1,8 +1,7 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.FrameAndTabSwithers.IFMAIL_FRAME_OF_YOPMAIL;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.FrameAndTabSwithers.switchToTab;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.UtilMethods.scrollPageToElement;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Swither.IFMAIL_FRAME_OF_YOPMAIL;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Swither.switchToTab;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForFrameAndSwitchToIt;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementByXpath;
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.google.EstimateResultPage;
@@ -30,21 +29,24 @@ public class YopmailMailPage extends YopmailParentPage {
     }
 
     public YopmailMailPage clickCheckInboxButton() {
+        LOGGER.info("Opening Yopmail tab with Yopmail Inbox page");
         switchToTab(yopmailTab, driver);
-        scrollPageToElement(buttonCheckInBox, driver);
+        scrollPageToElement(buttonCheckInBox);
         buttonCheckInBox.click();
         LOGGER.info("Opened Yopmail tab with Yopmail Inbox page");
         return this;
     }
 
     public void clickRefreshMailButton() {
+        LOGGER.info("Refreshing Mail page");
         driver.switchTo().defaultContent();
-        scrollPageToElement(buttonRefreshMail, driver);
+        scrollPageToElement(buttonRefreshMail);
         buttonRefreshMail.click();
         LOGGER.info("Mail page refreshed");
     }
 
     public EstimateResultPage checkForLetter(){
+        LOGGER.info("Looking for the Letter");
         clickRefreshMailButton();
         try {
             waitForFrameAndSwitchToIt(IFMAIL_FRAME_OF_YOPMAIL, driver);
@@ -60,6 +62,7 @@ public class YopmailMailPage extends YopmailParentPage {
     }
 
     public String getMailAdress() {
+        LOGGER.info("Looking for Email address in mailbox");
         switchToTab(yopmailTab, driver);
                                                   // switching to default content otherwise mailbox address will not be found
         driver.switchTo().defaultContent();
@@ -68,8 +71,10 @@ public class YopmailMailPage extends YopmailParentPage {
     }
 
     public String getTotalEstimatedCostInMail() {
+        LOGGER.info("Looking for Total estimated cost in mail");
         switchToTab(yopmailTab, driver);
         driver.switchTo().frame(IFMAIL_FRAME_OF_YOPMAIL);
+        LOGGER.info("Returning Total estimated cost in mail caught in mail");
         return totalCostInMail.getText()
                 .replaceFirst("Total Estimated Cost: ", "");
     }

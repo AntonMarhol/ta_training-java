@@ -17,7 +17,6 @@ com\epam\training\student_anton_marhol\hardcore\ui\util\Waitings.class
 com\epam\training\student_anton_marhol\bring_it_on\util\Utils.class
 com\epam\training\student_anton_marhol\framework_practical_task\test\SmokeTest.class
 com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\GoogleCloudParentPage.class
-com\epam\training\student_anton_marhol\framework_practical_task\ui\util\FrameAndTabSwithers.class
 com\epam\training\student_anton_marhol\hardcore\test\ParentTestClass.class
 com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\EstimateResultPage.class
 com\epam\training\student_anton_marhol\hardcore\ui\util\FrameSwitches.class
@@ -34,7 +33,7 @@ com\epam\training\student_anton_marhol\hardcore\ui\page\yopmail\YopmailParentPag
 com\epam\training\student_anton_marhol\bring_it_on\page\ParentPage.class
 com\epam\training\student_anton_marhol\hurt_me_plenty\ui\util\UtilMethods.class
 com\epam\training\student_anton_marhol\hurt_me_plenty\service\FormFiller.class
-com\epam\training\student_anton_marhol\framework_practical_task\test\CommonConditions.class
+com\epam\training\student_anton_marhol\framework_practical_task\test\CommonCondition.class
 com\epam\training\student_anton_marhol\framework_practical_task\ui\page\yopmail\GenerateYopmailAddressPage.class
 com\epam\training\student_anton_marhol\hurt_me_plenty\ui\page\GoogleCloudHomePage.class
 com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\GoogleCloudHomePage.class
@@ -64,7 +63,7 @@ com\epam\training\student_anton_marhol\hardcore\ui\page\google\GoogleSearchResul
 com\epam\training\student_anton_marhol\i_can_win\util\LocatorCreator.class
 com\epam\training\student_anton_marhol\bring_it_on\test\PastebinTest.class
 com\epam\training\student_anton_marhol\framework_practical_task\ui\page\yopmail\YopmailParentPage.class
-com\epam\training\student_anton_marhol\framework_practical_task\ui\util\UtilMethods.class
+com\epam\training\student_anton_marhol\framework_practical_task\ui\util\Swither.class
 com\epam\training\student_anton_marhol\bring_it_on\util\LocatorCreator.class
 com\epam\training\student_anton_marhol\hurt_me_plenty\ui\page\ParentPage.class
 com\epam\training\student_anton_marhol\hurt_me_plenty\ui\util\LocatorCreator.class

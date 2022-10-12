@@ -5,6 +5,7 @@ import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.g
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.google.GoogleCloudHomePage;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Configuration;
 
 public class PricingCalculatorMaker extends ServiceParentClass{
 
@@ -14,6 +15,8 @@ public class PricingCalculatorMaker extends ServiceParentClass{
         super(driver);
     }
 
+    @SuppressWarnings("deprecation")
+    @Configuration(description = "fill the form in pricing calculator fot prepare page for tests, send letter with estimate result and wait for it")
     public static EstimateResultPage fillTheForm(WebDriver driver, Instances instances) {
         return new GoogleCloudHomePage(driver)
                 .openPage()
@@ -50,6 +53,8 @@ public class PricingCalculatorMaker extends ServiceParentClass{
                 .checkForLetter();
     }
 
+    @SuppressWarnings("deprecation")
+    @Configuration(description = "looking for pricing calculator and return its page title")
     public String getTitleOfPage(WebDriver driver) {
         return new GoogleCloudHomePage(driver)
                 .openPage()

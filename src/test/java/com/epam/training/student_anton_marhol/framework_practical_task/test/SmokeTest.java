@@ -6,17 +6,15 @@ import com.epam.training.student_anton_marhol.framework_practical_task.service.Y
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SmokeTest extends CommonConditions {
+public class SmokeTest extends CommonCondition {
 
-    @Test(priority = 2, description = "Check for Pricing calculator page will open and compare title")
+    @Test(groups = { "smoketest" }, description = "Check for Pricing calculator page will open and compare title")
     public void basicGoogleCloudFunction() {
-        PricingCalculatorMaker pricingCalculatorMaker = new PricingCalculatorMaker(driver);
-        Assert.assertEquals(pricingCalculatorMaker.getTitleOfPage(driver), GOOGLE_CLOUD_TAB_TITLE, "Tab title is incorrect");
+        Assert.assertEquals(new PricingCalculatorMaker(driver).getTitleOfPage(driver), GOOGLE_CLOUD_TAB_TITLE, "Tab title is incorrect");
     }
 
-    @Test(priority = 2, description = "Compare generated email with email in the mail box ")
+    @Test(groups = { "smoketest" }, description = "Compare generated email with email in the mail box ")
     public void basicYopmailFunction() {
-        YopmailMaker yopmailMaker = new YopmailMaker(driver);
-        Assert.assertEquals(yopmailMaker.getYopmailEmailAddress(), yopmailMail, "Generated email is different from mail box email.");
+        Assert.assertEquals(new YopmailMaker(driver).getYopmailEmailAddress(), yopmailMail, "Generated email is different from mail box email.");
     }
 }

@@ -18,16 +18,18 @@ public class GoogleCloudHomePage extends GoogleCloudParentPage {
     }
 
     public GoogleCloudHomePage openPage() {
+        LOGGER.info("Looking for " + GOOGLE_CLOUD_URL);
         driver.get(GOOGLE_CLOUD_URL);
         LOGGER.info(GOOGLE_CLOUD_URL + " opened");
         return this;
     }
 
     public GoogleSearchResultsPage search(String searchKey) {
+        LOGGER.info("Waiting for search field.");
         waitForPresenceElementByXpath(SEARCH_FIELD, driver);
         searchField.sendKeys(searchKey);
         searchField.submit();
-        LOGGER.info(searchKey + "is looking for");
+        LOGGER.info(searchKey + " search started");
         return new GoogleSearchResultsPage(driver);
     }
 }

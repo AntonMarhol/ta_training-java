@@ -1,8 +1,7 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.google;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonConditions.yopmailMail;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.FrameAndTabSwithers.switchToMyframeOfPricingCalculator;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.UtilMethods.scrollPageToElement;
+import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonCondition.yopmailMail;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Swither.switchToMyframeOfPricingCalculator;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementById;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementByXpath;
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail.YopmailHomePage;
@@ -32,6 +31,7 @@ public class PricingCalculatorMailPage extends GoogleCloudParentPage {
     }
 
     public PricingCalculatorMailPage openMailAddressForm() {
+        LOGGER.info("Opening Mail address form");
         waitForPresenceElementById(MAIL_ADDRESS_FORM_BUTTON, driver);
         mailAddressFormButton.click();
         googleCloudTab = driver.getWindowHandle();
@@ -40,12 +40,14 @@ public class PricingCalculatorMailPage extends GoogleCloudParentPage {
     }
 
     public PricingCalculatorMailPage openNewTab() {
+        LOGGER.info("Opening New tab");
         driver.switchTo().newWindow(WindowType.TAB);
-        LOGGER.info("New tab opened.");
+        LOGGER.info("New tab opened");
         return this;
     }
 
     public PricingCalculatorMailPage fillMailAddressForm() {
+        LOGGER.info("Filling Mail address form");
                                                 // refresh Pricing Calculator Tab frames for stable work
         switchToMyframeOfPricingCalculator(driver);
         waitForPresenceElementByXpath(INPUT_EMAIL_FIELD, driver);
@@ -55,7 +57,8 @@ public class PricingCalculatorMailPage extends GoogleCloudParentPage {
     }
 
     public PricingCalculatorMailPage clickSendEstimateByMailButton() {
-        scrollPageToElement(sendEstimateByMailButton, driver);
+        LOGGER.info("Sending Estimate by email");
+        scrollPageToElement(sendEstimateByMailButton);
         sendEstimateByMailButton.click();
         LOGGER.info("Estimate sent by email");
         return this;

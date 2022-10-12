@@ -4,7 +4,7 @@ import java.util.ResourceBundle;
 
 public class InstancesReader {
 
-    private static ResourceBundle resourceBundle = ResourceBundle.getBundle(System.getProperty("parameters"));
+    private static ResourceBundle resourceBundle = ResourceBundle.getBundle(System.getProperty("instanceParameters"));
 
     public static String getInstances(String key) {
         return resourceBundle.getString(key);

@@ -4,13 +4,14 @@ import com.epam.training.student_anton_marhol.framework_practical_task.business_
 import com.epam.training.student_anton_marhol.framework_practical_task.business_objects.model.Instances;
 import com.epam.training.student_anton_marhol.framework_practical_task.driver.DriverSingleton;
 import com.epam.training.student_anton_marhol.framework_practical_task.test_listener.TestListener;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
 @Listeners({TestListener.class})
-public class CommonConditions {
+public class CommonCondition {
 
     public static String yopmailMail;
     protected static final String GOOGLE_CLOUD_TAB_TITLE = "Google Cloud Pricing Calculator";
@@ -23,7 +24,7 @@ public class CommonConditions {
         driver= DriverSingleton.getDriver();
     }
 
-    @AfterClass(alwaysRun = true, description = "Close browser in any case")
+    @AfterClass(description = "Close browser in any case")
     public void browserShutDown() {
         DriverSingleton.closeDriver();
     }

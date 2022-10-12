@@ -12,6 +12,7 @@ public class GoogleSearchResultsPage extends GoogleCloudParentPage {
     }
 
     public PricingCalculatorFormPage openPricingCalculator(String searchKey){
+        LOGGER.info("Looking for " + searchKey + "in search result.");
         waitForPresenceElementByLinkText(searchKey, driver);
         driver.findElement(By.linkText(searchKey)).click();
         LOGGER.info(searchKey + " found and opened");

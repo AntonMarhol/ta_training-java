@@ -4,8 +4,8 @@ import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.y
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail.YopmailMailPage;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Configuration;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.FrameAndTabSwithers.switchToTab;
 
 public class YopmailMaker extends ServiceParentClass{
 
@@ -13,6 +13,8 @@ public class YopmailMaker extends ServiceParentClass{
         super(driver);
     }
 
+    @SuppressWarnings("deprecation")
+    @Configuration(description = "create new yopmail box and return its mail address")
     public String getYopmailEmailAddress() {
         return new YopmailHomePage(driver)
                 .openNewTab()
@@ -24,6 +26,8 @@ public class YopmailMaker extends ServiceParentClass{
                 .getMailAdress();
     }
 
+    @SuppressWarnings("deprecation")
+    @Configuration(description = "return mail address in the letter in yopmail")
     public String getEmailAddressInLetter() {
         return new YopmailMailPage(driver)
                 .getMailAdress();

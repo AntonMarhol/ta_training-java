@@ -1,6 +1,5 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.UtilMethods.scrollPageToElement;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.*;
 
 import org.openqa.selenium.WebDriver;
@@ -20,6 +19,7 @@ public class YopmailHomePage extends YopmailParentPage {
     }
 
     public YopmailHomePage openYopmail() {
+        LOGGER.info("Opening Yopmail tab with Yopmail Homepage");
         driver.get(YOPMAIL_URL);
         yopmailTab = driver.getWindowHandle();
         waitForNumberOfWindow(2, driver);
@@ -28,16 +28,18 @@ public class YopmailHomePage extends YopmailParentPage {
     }
 
     public GenerateYopmailAddressPage generateMail() {
+        LOGGER.info("Generating Mail address");
         waitForPresenceElementByXpath(BUTTON_GENERATE_EMAIL, driver);
-        scrollPageToElement(buttonGenerateEmail, driver);
+        scrollPageToElement(buttonGenerateEmail);
         buttonGenerateEmail.click();
         LOGGER.info("Mail address generated");
         return new GenerateYopmailAddressPage(driver);
     }
 
     public YopmailHomePage openNewTab() {
+        LOGGER.info("Opening New tab");
         driver.switchTo().newWindow(WindowType.TAB);
-        LOGGER.info("New tab opened.");
+        LOGGER.info("New tab opened");
         return this;
     }
 }

@@ -2,10 +2,9 @@
 
 <html>
   <head>
-  <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -59,7 +58,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Framework_all_tests" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,11 +107,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Framework_all_tests" title="com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest" class="method navigator-link" hash-for-method="basicYopmailFunction">basicYopmailFunction</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Framework_all_tests" title="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest" class="method navigator-link" hash-for-method="formSetup">formSetup</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -140,41 +134,6 @@
           <div class="suite-Framework_all_tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="formSetup">
-                  </a> <!-- formSetup -->
-                  <span class="method-name">formSetup</span>
-                  <em>
-(Fill the form and send estimate by email)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="mailAddress">
-                  </a> <!-- mailAddress -->
-                  <span class="method-name">mailAddress</span>
-                  <em>
-(Compare generated email address and address in mail box)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="totalEstimatedCost">
-                  </a> <!-- totalEstimatedCost -->
-                  <span class="method-name">totalEstimatedCost</span>
-                  <em>
-(Compare estimated cost in mail and on estimate page)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Framework_all_tests-class-passed -->
-          <div class="suite-Framework_all_tests-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -198,6 +157,32 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Framework_all_tests-class-passed -->
+          <div class="suite-Framework_all_tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="mailAddress">
+                  </a> <!-- mailAddress -->
+                  <span class="method-name">mailAddress</span>
+                  <em>
+(Compare generated email address and address in mail box)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="totalEstimatedCost">
+                  </a> <!-- totalEstimatedCost -->
+                  <span class="method-name">totalEstimatedCost</span>
+                  <em>
+(Compare estimated cost in mail and on estimate page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Framework_all_tests-class-passed -->
         </div> <!-- panel Framework_all_tests -->
         <div panel-name="test-xml-Framework_all_tests" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -207,15 +192,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Framework all tests&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Framework all tests&quot; verbose=&quot;0&quot;&gt;
-    &lt;packages&gt;
-      &lt;package name=&quot;com.epam.training.student_anton_marhol.framework_practical_task.test&quot;/&gt;
-    &lt;/packages&gt;
+&lt;suite name=&quot;Framework all tests&quot; verbose=&quot;0&quot;&gt;
+  &lt;test name=&quot;Framework all tests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.epam.training.student_anton_marhol.framework_practical_task.test.CommonConditions&quot;/&gt;
-      &lt;class name=&quot;com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest&quot;/&gt;
       &lt;class name=&quot;com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest&quot;/&gt;
+      &lt;class name=&quot;com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Framework all tests --&gt;
 &lt;/suite&gt; &lt;!-- Framework all tests --&gt;
@@ -229,7 +210,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Framework all tests (3 classes)</span>
+                <span class="test-name">Framework all tests (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -239,6 +220,30 @@
             <span class="header-content">Groups for Framework all tests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">functest</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">mailAddress</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">totalEstimatedCost</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">smoketest</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">basicGoogleCloudFunction</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">basicYopmailFunction</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Framework_all_tests" class="panel">
@@ -255,32 +260,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'formSetup')
-data.setCell(0, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-data.setCell(0, 3, 40964);
+data.setCell(0, 1, 'basicGoogleCloudFunction')
+data.setCell(0, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest')
+data.setCell(0, 3, 21451);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'basicGoogleCloudFunction')
+data.setCell(1, 1, 'basicYopmailFunction')
 data.setCell(1, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest')
-data.setCell(1, 3, 18816);
+data.setCell(1, 3, 10349);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'basicYopmailFunction')
-data.setCell(2, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest')
-data.setCell(2, 3, 9053);
+data.setCell(2, 1, 'totalEstimatedCost')
+data.setCell(2, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
+data.setCell(2, 3, 293);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'totalEstimatedCost')
+data.setCell(3, 1, 'mailAddress')
 data.setCell(3, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-data.setCell(3, 3, 235);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'mailAddress')
-data.setCell(4, 2, 'com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest')
-data.setCell(4, 3, 140);
+data.setCell(3, 3, 135);
 window.suiteTableData['Framework_all_tests']= { tableData: data, tableDiv: 'times-div-Framework_all_tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Framework_all_tests">
               </div> <!-- times-div-Framework_all_tests -->
             </div> <!-- times-div -->
@@ -306,45 +307,45 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">browserSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">formSetup</span>
-                <span class="method-start">9041 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">mailAddress</span>
-                <span class="method-start">50010 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">totalEstimatedCost</span>
-                <span class="method-start">50150 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">browserShutDown</span>
-                <span class="method-start">50385 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">browserSetup</span>
-                <span class="method-start">51609 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
                 <span class="method-name">basicGoogleCloudFunction</span>
-                <span class="method-start">53688 ms</span>
+                <span class="method-start">7710 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">basicYopmailFunction</span>
-                <span class="method-start">72505 ms</span>
+                <span class="method-start">29161 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">browserShutDown</span>
-                <span class="method-start">81558 ms</span>
+                <span class="method-start">39511 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">browserSetup</span>
+                <span class="method-start">41115 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">formSetup</span>
+                <span class="method-start">43044 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">mailAddress</span>
+                <span class="method-start">90511 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">totalEstimatedCost</span>
+                <span class="method-start">90646 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">browserShutDown</span>
+                <span class="method-start">90954 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

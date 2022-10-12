@@ -25,7 +25,6 @@ c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\bring_it_on\page\PastebinResultPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hardcore\ui\page\yopmail\MailBoxPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\business_objects\model\Instances.java
-c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\util\UtilMethods.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\business_objects\builder\InstancesReader.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\service\PricingCalculatorMaker.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\test\SmokeTest.java
@@ -41,16 +40,17 @@ c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hurt_me_plenty\ui\page\PricingCalculatorFormPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hurt_me_plenty\ui\page\EstimateResultPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\bring_it_on\page\CustomConditions.java
+c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\util\Swither.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hardcore\ui\util\FrameSwitches.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hardcore\ui\util\Waitings.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\EstimateResultPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\PricingCalculatorFormPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\test\GoogleCloudPricingCalculatorTest.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\bring_it_on\test\PastebinTest.java
-c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\test\CommonConditions.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\i_can_win\page\PastebinHomePageForm.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\bring_it_on\page\ParentPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\PricingCalculatorMailPage.java
+c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\test\CommonCondition.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\GoogleCloudParentPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\yopmail\YopmailHomePage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\yopmail\YopmailParentPage.java
@@ -59,7 +59,6 @@ c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\ParentPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\page\google\GoogleSearchResultsPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hardcore\ui\page\google\PricingCalculatorFormPage.java
-c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\ui\util\FrameAndTabSwithers.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\framework_practical_task\driver\DriverSingleton.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hardcore\ui\page\google\PricingCalculatorMailPage.java
 c:\EPAM-studies\com.epam.training.student_anton_marhol\ta_training-java\src\test\java\com\epam\training\student_anton_marhol\hurt_me_plenty\ui\util\LocatorCreator.java
