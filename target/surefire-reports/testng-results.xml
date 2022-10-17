@@ -1,59 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="4" passed="4" failed="0" skipped="0">
+<testng-results total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-12T14:14:30Z" name="Framework all tests" finished-at="2022-10-12T14:16:02Z" duration-ms="92105">
+  <suite started-at="2022-10-13T08:30:53Z" name="smoke tests" finished-at="2022-10-13T08:31:28Z" duration-ms="34780">
     <groups>
-      <group name="functest">
-        <method signature="GoogleCloudPricingCalculatorTest.mailAddress()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" name="mailAddress" class="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest"/>
-        <method signature="GoogleCloudPricingCalculatorTest.totalEstimatedCost()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" name="totalEstimatedCost" class="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest"/>
-      </group> <!-- functest -->
       <group name="smoketest">
-        <method signature="SmokeTest.basicGoogleCloudFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@49e5f737]" name="basicGoogleCloudFunction" class="com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest"/>
-        <method signature="SmokeTest.basicYopmailFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@49e5f737]" name="basicYopmailFunction" class="com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest"/>
+        <method signature="SmokeTest.basicGoogleCloudFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@7494f96a]" name="basicGoogleCloudFunction" class="com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest"/>
+        <method signature="SmokeTest.basicYopmailFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@7494f96a]" name="basicYopmailFunction" class="com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest"/>
       </group> <!-- smoketest -->
     </groups>
-    <test started-at="2022-10-12T14:14:30Z" name="Framework all tests" finished-at="2022-10-12T14:16:02Z" duration-ms="92105">
-      <class name="com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" started-at="2022-10-12T18:15:11Z" name="browserSetup" description="Open browser and maximize, run fillTheForm method to prepare browser for tests." finished-at="2022-10-12T18:15:13Z" duration-ms="1929" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserSetup -->
-        <test-method is-config="true" signature="formSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" started-at="2022-10-12T18:15:13Z" name="formSetup" description="find, open and fill pricing calculator form, send letter with estimate result and wait for it" finished-at="2022-10-12T18:16:00Z" duration-ms="47467" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- formSetup -->
-        <test-method signature="mailAddress()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" started-at="2022-10-12T18:16:00Z" name="mailAddress" description="Compare generated email address and address in mail box" finished-at="2022-10-12T18:16:01Z" duration-ms="135" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mailAddress -->
-        <test-method signature="totalEstimatedCost()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" started-at="2022-10-12T18:16:01Z" name="totalEstimatedCost" description="Compare estimated cost in mail and on estimate page" finished-at="2022-10-12T18:16:01Z" duration-ms="293" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- totalEstimatedCost -->
-        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest@291b4bf5]" started-at="2022-10-12T18:16:01Z" name="browserShutDown" description="Close browser in any case" finished-at="2022-10-12T18:16:02Z" duration-ms="1146" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- browserShutDown -->
-      </class> <!-- com.epam.training.student_anton_marhol.framework_practical_task.test.GoogleCloudPricingCalculatorTest -->
+    <test started-at="2022-10-13T08:30:53Z" name="smoke tests" finished-at="2022-10-13T08:31:28Z" duration-ms="34780">
       <class name="com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@49e5f737]" started-at="2022-10-12T18:14:30Z" name="browserSetup" description="Open browser and maximize, run fillTheForm method to prepare browser for tests." finished-at="2022-10-12T18:14:38Z" duration-ms="7705" status="PASS">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@7494f96a]" started-at="2022-10-13T12:30:53Z" name="browserSetup" description="Open browser and maximize, run fillTheForm method to prepare browser for tests." finished-at="2022-10-13T12:31:00Z" duration-ms="6708" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method signature="basicGoogleCloudFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@49e5f737]" started-at="2022-10-12T18:14:38Z" name="basicGoogleCloudFunction" description="Check for Pricing calculator page will open and compare title" finished-at="2022-10-12T18:14:59Z" duration-ms="21451" status="PASS">
+        <test-method signature="basicGoogleCloudFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@7494f96a]" started-at="2022-10-13T12:31:00Z" name="basicGoogleCloudFunction" description="Check for Pricing calculator page will open and compare title" finished-at="2022-10-13T12:31:19Z" duration-ms="19610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basicGoogleCloudFunction -->
-        <test-method signature="basicYopmailFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@49e5f737]" started-at="2022-10-12T18:14:59Z" name="basicYopmailFunction" description="Compare generated email with email in the mail box " finished-at="2022-10-12T18:15:09Z" duration-ms="10349" status="PASS">
+        <test-method signature="basicYopmailFunction()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@7494f96a]" started-at="2022-10-13T12:31:19Z" name="basicYopmailFunction" description="Compare generated email with email in the mail box " finished-at="2022-10-13T12:31:27Z" duration-ms="7392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basicYopmailFunction -->
-        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@49e5f737]" started-at="2022-10-12T18:15:09Z" name="browserShutDown" description="Close browser in any case" finished-at="2022-10-12T18:15:11Z" duration-ms="1604" status="PASS">
+        <test-method is-config="true" signature="browserShutDown()[pri:0, instance:com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest@7494f96a]" started-at="2022-10-13T12:31:27Z" name="browserShutDown" description="Close browser in any case" finished-at="2022-10-13T12:31:28Z" duration-ms="1044" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserShutDown -->
       </class> <!-- com.epam.training.student_anton_marhol.framework_practical_task.test.SmokeTest -->
-    </test> <!-- Framework all tests -->
-  </suite> <!-- Framework all tests -->
+    </test> <!-- smoke tests -->
+  </suite> <!-- smoke tests -->
 </testng-results>
