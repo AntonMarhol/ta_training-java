@@ -19,12 +19,12 @@ public class CommonCondition {
     Instances instances = InstancesCreator.withCredentialsFromProperties();
     WebDriver driver;
 
-    @BeforeClass(description = "Open browser and maximize, run fillTheForm method to prepare browser for tests.")
+    @BeforeClass(groups = { "functest", "smoketest" }, description = "Open browser and maximize, run fillTheForm method to prepare browser for tests.")
     public void browserSetup() {
         driver= DriverSingleton.getDriver();
     }
 
-    @AfterClass(description = "Close browser in any case")
+    @AfterClass(groups = { "functest", "smoketest"}, description = "Close browser in any case")
     public void browserShutDown() {
         DriverSingleton.closeDriver();
     }

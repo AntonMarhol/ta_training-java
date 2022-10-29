@@ -31,7 +31,7 @@ public class GenerateYopmailAddressPage extends YopmailParentPage {
         return new PricingCalculatorMailPage(driver);
     }
 
-    public YopmailMailPage goToMaiThePage(){
+    public YopmailMailPage goToMailPage(){
         LOGGER.info("Opening Yopmail tab");
         switchToTab(yopmailTab, driver);
         LOGGER.info("Yopmail tab opened");

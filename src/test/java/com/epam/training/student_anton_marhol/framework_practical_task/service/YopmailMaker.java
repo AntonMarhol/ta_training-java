@@ -21,7 +21,7 @@ public class YopmailMaker extends ServiceParentClass{
                 .openYopmail()
                 .generateMail()
                 .copyGeneratedMail()
-                .goToMaiThePage()
+                .goToMailPage()
                 .clickCheckInboxButton()
                 .getMailAdress();
     }
