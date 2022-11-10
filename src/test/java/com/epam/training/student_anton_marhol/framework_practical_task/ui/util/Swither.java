@@ -1,8 +1,8 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.ui.util;
 
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.page.ParentPage.LOGGER;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.BASE_WAIT_TIME;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.LONG_WAIT_TIME;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.BASE_WAIT_TIME;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.LONG_WAIT_TIME;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

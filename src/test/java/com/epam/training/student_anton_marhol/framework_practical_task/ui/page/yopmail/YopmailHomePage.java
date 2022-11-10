@@ -1,6 +1,6 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.*;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.*;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

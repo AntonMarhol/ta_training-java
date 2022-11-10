@@ -2,8 +2,8 @@ package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.
 
 import static com.epam.training.student_anton_marhol.framework_practical_task.test.CommonCondition.yopmailMail;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Swither.switchToMyframeOfPricingCalculator;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementById;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementByXpath;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.waitForPresenceElementById;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.waitForPresenceElementByXpath;
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail.YopmailHomePage;
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.yopmail.YopmailMailPage;
 

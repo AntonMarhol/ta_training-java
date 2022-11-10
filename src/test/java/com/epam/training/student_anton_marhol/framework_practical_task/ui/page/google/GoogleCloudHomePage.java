@@ -1,6 +1,6 @@
 package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.google;
 
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementByXpath;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.waitForPresenceElementByXpath;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

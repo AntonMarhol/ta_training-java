@@ -2,8 +2,8 @@ package com.epam.training.student_anton_marhol.framework_practical_task.ui.page.
 
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Swither.IFMAIL_FRAME_OF_YOPMAIL;
 import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Swither.switchToTab;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForFrameAndSwitchToIt;
-import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waitings.waitForPresenceElementByXpath;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.waitForFrameAndSwitchToIt;
+import static com.epam.training.student_anton_marhol.framework_practical_task.ui.util.Waits.waitForPresenceElementByXpath;
 import com.epam.training.student_anton_marhol.framework_practical_task.ui.page.google.EstimateResultPage;
 
 import org.openqa.selenium.TimeoutException;

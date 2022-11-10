@@ -41,6 +41,28 @@ public class PricingCalculatorFormPage extends GoogleCloudParentPage {
         super(driver);
     }
 
+    public PricingCalculatorMailPage fillTheForm(Instances instances){
+                new PricingCalculatorFormPage(driver)
+                        .activateTabHolder()
+                        .selectNumberOfInstances(instances)
+                        .openOperationSystemDropDownList()
+                        .selectOperationSystem(instances)
+                        .openProvisioningModelDropDownList()
+                        .selectProvisioningModel(instances)
+                        .openSeriesOfMachineDropDownList()
+                        .selectSeriesOfMachine(instances)
+                        .openMachineTypeDropDownList()
+                        .selectMachineType(instances)
+                        .checkAddGPUsAndFillDependentFields(instances)
+                        .openLocalSSDDropDownList()
+                        .selectLocalSSD(instances)
+                        .openDatacenterLocationDropDownList()
+                        .selectDatacenterLocation(instances)
+                        .addCommittedUsage(instances)
+                        .pushTheButtonAddToEstimate();
+        return new PricingCalculatorMailPage(driver);
+    }
+
     public PricingCalculatorFormPage activateTabHolder() {
         LOGGER.info("Activating TAB Compute Engine");
         switchToMyframeOfPricingCalculator(driver);

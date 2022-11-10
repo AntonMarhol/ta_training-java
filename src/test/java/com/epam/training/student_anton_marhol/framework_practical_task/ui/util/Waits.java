@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 
-public class Waitings {
+public class Waits {
 
     public static final Duration LONG_WAIT_TIME = Duration.ofSeconds(30);
     public static final Duration BASE_WAIT_TIME = Duration.ofSeconds(10);
