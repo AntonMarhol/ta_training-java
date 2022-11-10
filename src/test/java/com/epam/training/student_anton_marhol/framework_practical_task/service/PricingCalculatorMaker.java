@@ -9,7 +9,7 @@ import org.testng.annotations.Configuration;
 
 public class PricingCalculatorMaker extends ServiceParentClass{
 
-    protected static final String LOCATOR_FOR_CLOUD_PRICING_CALCULATOR = "Google Cloud Platform Pricing Calculator";
+    protected static final String CLOUD_PRICING_CALCULATOR_LOCATOR = "Google Cloud Platform Pricing Calculator";
 
     public PricingCalculatorMaker(WebDriver driver) {
         super(driver);
@@ -20,8 +20,8 @@ public class PricingCalculatorMaker extends ServiceParentClass{
     public static EstimateResultPage fillTheForm(WebDriver driver, Instances instances) {
         return new GoogleCloudHomePage(driver)
                 .openPage()
-                .search(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)
-                .openPricingCalculator(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)
+                .search(CLOUD_PRICING_CALCULATOR_LOCATOR)
+                .open(CLOUD_PRICING_CALCULATOR_LOCATOR)
                 .fillTheForm(instances)
                 .openMailAddressForm()
                 .openNewTab()
@@ -42,8 +42,8 @@ public class PricingCalculatorMaker extends ServiceParentClass{
     public String getTitleOfPage(WebDriver driver) {
         return new GoogleCloudHomePage(driver)
                 .openPage()
-                .search(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)
-                .openPricingCalculator(LOCATOR_FOR_CLOUD_PRICING_CALCULATOR)
+                .search(CLOUD_PRICING_CALCULATOR_LOCATOR)
+                .open(CLOUD_PRICING_CALCULATOR_LOCATOR)
                 .getTitle();
     }
 }

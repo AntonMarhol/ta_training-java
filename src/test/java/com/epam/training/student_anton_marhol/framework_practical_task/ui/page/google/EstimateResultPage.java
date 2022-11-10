@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 public class EstimateResultPage extends GoogleCloudParentPage {
 
     @FindBy(xpath = "//b[contains(text(),'Total Estimated Cost:')]")
-    WebElement totalCostInPricingCalculator;
+    private WebElement totalCostInPricingCalculator;
 
     public EstimateResultPage(WebDriver driver) {
         super(driver);

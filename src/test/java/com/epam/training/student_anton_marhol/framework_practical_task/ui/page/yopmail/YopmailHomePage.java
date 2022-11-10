@@ -12,7 +12,7 @@ public class YopmailHomePage extends YopmailParentPage {
     private static final String BUTTON_GENERATE_EMAIL = "//b[text()='Random Email Address']";
 
     @FindBy (xpath = BUTTON_GENERATE_EMAIL)
-    WebElement buttonGenerateEmail;
+    private WebElement buttonGenerateEmail;
 
     public YopmailHomePage(WebDriver driver) {
         super(driver);
@@ -30,8 +30,8 @@ public class YopmailHomePage extends YopmailParentPage {
     public GenerateYopmailAddressPage generateMail() {
         LOGGER.info("Generating Mail address");
         waitForPresenceElementByXpath(BUTTON_GENERATE_EMAIL, driver);
-        scrollPageToElement(buttonGenerateEmail);
-        buttonGenerateEmail.click();
+        scrollPageToElement(buttonGenerateEmail).click();
+//        buttonGenerateEmail.click();
         LOGGER.info("Mail address generated");
         return new GenerateYopmailAddressPage(driver);
     }

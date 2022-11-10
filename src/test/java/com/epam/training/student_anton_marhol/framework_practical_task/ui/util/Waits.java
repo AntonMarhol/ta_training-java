@@ -2,6 +2,7 @@ package com.epam.training.student_anton_marhol.framework_practical_task.ui.util;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -12,8 +13,8 @@ public class Waits {
     public static final Duration LONG_WAIT_TIME = Duration.ofSeconds(30);
     public static final Duration BASE_WAIT_TIME = Duration.ofSeconds(10);
 
-    public static void waitForPresenceElementById(String selectorForElement, WebDriver driver){
-        new WebDriverWait(driver, BASE_WAIT_TIME)
+    public static WebElement waitForPresenceElementById(String selectorForElement, WebDriver driver){
+        return new WebDriverWait(driver, BASE_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.id(selectorForElement)));
     }
 
@@ -22,8 +23,8 @@ public class Waits {
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectorForElement)));
     }
 
-    public static void waitForPresenceElementByLinkText(String text, WebDriver driver){
-        new WebDriverWait(driver, LONG_WAIT_TIME)
+    public static WebElement waitForPresenceElementByLinkText(String text, WebDriver driver){
+        return new WebDriverWait(driver, LONG_WAIT_TIME)
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText(text)));
     }
 

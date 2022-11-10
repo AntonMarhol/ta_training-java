@@ -10,32 +10,34 @@ import org.openqa.selenium.support.FindBy;
 
 public class PricingCalculatorFormPage extends GoogleCloudParentPage {
 
-    private static final String TAB_COMPUTE_ENGINE_XPATH = "//div[@title='Compute Engine']";
+//    private static final By TAB_COMPUTE_ENGINE_XPATH = By.xpath("//div[@title='Compute Engine']");
 
+    @FindBy (xpath = "//div[@title='Compute Engine']")
+    private WebElement tabComputeEngineButton;
     @FindBy (xpath = "//label[contains(text(),'Operating System / Software')]/..//md-select-value")
-    WebElement operationSystemDropDownList;
+    private WebElement operationSystemDropDownList;
     @FindBy (xpath = "//label[contains(text(),'Provisioning model')]/..//md-select-value")
-    WebElement provisioningModelDropDownList;
+    private WebElement provisioningModelDropDownList;
     @FindBy (xpath = "//label[contains(text(),'Series')]/..//md-select-value")
-    WebElement seriesOfMachineDropDownList;
+    private WebElement seriesOfMachineDropDownList;
     @FindBy (xpath = "//label[contains(text(),'Machine type')]/..//md-select-value")
-    WebElement machineTypeDropDownList;
+    private WebElement machineTypeDropDownList;
     @FindBy (xpath = "//label[contains(text(),'Number of instances')]/..//input")
-    WebElement numberOfInstancesPostform;
+    private WebElement numberOfInstancesPostform;
     @FindBy (xpath = "//md-select[@placeholder='GPU type']")
-    WebElement typeOfGPUDropDownList;
+    private WebElement typeOfGPUDropDownList;
     @FindBy (xpath = "//md-select[@placeholder='Number of GPUs']")
-    WebElement numberOfGPUsDropDownList;
+    private WebElement numberOfGPUsDropDownList;
     @FindBy (xpath = "//label[contains(text(),'Local SSD')]/..")
-    WebElement localSSDDropDownList;
+    private WebElement localSSDDropDownList;
     @FindBy (xpath = "//label[contains(text(),'Datacenter location')]/..//md-select")
-    WebElement datacenterLocationDropDownList;
+    private WebElement datacenterLocationDropDownList;
     @FindBy (xpath = "//md-select[contains(@aria-label,'Committed usage: None')]/md-select-value")
-    WebElement committedUsageDropDownList;
+    private WebElement committedUsageDropDownList;
     @FindBy (xpath = "//md-checkbox[@aria-label='Add GPUs']/div")
-    WebElement addGPUsCheckBox;
+    private WebElement addGPUsCheckBox;
     @FindBy (xpath = "//button[contains(@aria-label,'Add to Estimate')]")
-    WebElement addToEstimateButton;
+    private WebElement addToEstimateButton;
 
     public PricingCalculatorFormPage(WebDriver driver) {
         super(driver);
@@ -66,7 +68,8 @@ public class PricingCalculatorFormPage extends GoogleCloudParentPage {
     public PricingCalculatorFormPage activateTabHolder() {
         LOGGER.info("Activating TAB Compute Engine");
         switchToMyframeOfPricingCalculator(driver);
-        driver.findElement(By.xpath(TAB_COMPUTE_ENGINE_XPATH)).click();
+//        driver.findElement(TAB_COMPUTE_ENGINE_XPATH).click();
+        tabComputeEngineButton.click();
         LOGGER.info("TAB Compute Engine activated");
         return this;
     }

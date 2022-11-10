@@ -11,10 +11,10 @@ public class GoogleSearchResultsPage extends GoogleCloudParentPage {
         super(driver);
     }
 
-    public PricingCalculatorFormPage openPricingCalculator(String searchKey){
+    public PricingCalculatorFormPage open(String searchKey){
         LOGGER.info("Looking for " + searchKey + "in search result.");
-        waitForPresenceElementByLinkText(searchKey, driver);
-        driver.findElement(By.linkText(searchKey)).click();
+        waitForPresenceElementByLinkText(searchKey, driver).click();
+//        driver.findElement(By.linkText(searchKey)).click();
         LOGGER.info(searchKey + " found and opened");
         return new PricingCalculatorFormPage(driver);
     }

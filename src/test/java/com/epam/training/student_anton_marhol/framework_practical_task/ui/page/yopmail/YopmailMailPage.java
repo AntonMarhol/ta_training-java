@@ -16,13 +16,13 @@ public class YopmailMailPage extends YopmailParentPage {
     private static final String LETTER_FROM_GOOGLE_CLOUD = "//div[text()='Google Cloud Price Estimate']";
 
     @FindBy (xpath = "//span[text()='Check Inbox']")
-    WebElement buttonCheckInBox;
+    private WebElement buttonCheckInBox;
     @FindBy (id = "refresh")
-    WebElement buttonRefreshMail;
+    private WebElement buttonRefreshMail;
     @FindBy (xpath = "//div[@class='bname']")
-    WebElement mailBoxAdress;
+    private WebElement mailBoxAdress;
     @FindBy (xpath = "//h3[text()='Total Estimated Monthly Cost']/../following-sibling::td/h3")
-    WebElement totalCostInMail;
+    private WebElement totalCostInMail;
 
     public YopmailMailPage(WebDriver driver) {
         super(driver);

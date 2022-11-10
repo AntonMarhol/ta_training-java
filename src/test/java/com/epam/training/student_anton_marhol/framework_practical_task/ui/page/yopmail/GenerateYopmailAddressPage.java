@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 public class GenerateYopmailAddressPage extends YopmailParentPage {
 
     @FindBy(id = "egen")
-    WebElement generatedMail;
+    private WebElement generatedMail;
 
     public GenerateYopmailAddressPage(WebDriver driver){
         super(driver);

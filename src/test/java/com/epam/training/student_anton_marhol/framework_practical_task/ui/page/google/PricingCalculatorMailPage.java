@@ -18,13 +18,11 @@ public class PricingCalculatorMailPage extends GoogleCloudParentPage {
     private static final String INPUT_EMAIL_FIELD = "//label[text()='Email ']/following-sibling::input";
 
     @FindBy (xpath = "//button[contains(@aria-label,'Send Email')]")
-    WebElement sendEstimateByMailButton;
-
-    @FindBy (id = MAIL_ADDRESS_FORM_BUTTON)
-    WebElement mailAddressFormButton;
-
+    private WebElement sendEstimateByMailButton;
+//    @FindBy (id = MAIL_ADDRESS_FORM_BUTTON)
+//    private WebElement mailAddressFormButton;
     @FindBy (xpath = INPUT_EMAIL_FIELD)
-    WebElement mailAddressField;
+    private WebElement mailAddressField;
 
     public PricingCalculatorMailPage(WebDriver driver){
         super(driver);
@@ -32,8 +30,8 @@ public class PricingCalculatorMailPage extends GoogleCloudParentPage {
 
     public PricingCalculatorMailPage openMailAddressForm() {
         LOGGER.info("Opening Mail address form");
-        waitForPresenceElementById(MAIL_ADDRESS_FORM_BUTTON, driver);
-        mailAddressFormButton.click();
+        waitForPresenceElementById(MAIL_ADDRESS_FORM_BUTTON, driver).click();
+//        mailAddressFormButton.click();
         googleCloudTab = driver.getWindowHandle();
         LOGGER.info("Mail address form opened");
         return this;
