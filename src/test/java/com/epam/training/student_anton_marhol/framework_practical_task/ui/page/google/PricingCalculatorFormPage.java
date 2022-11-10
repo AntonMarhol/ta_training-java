@@ -68,7 +68,6 @@ public class PricingCalculatorFormPage extends GoogleCloudParentPage {
     public PricingCalculatorFormPage activateTabHolder() {
         LOGGER.info("Activating TAB Compute Engine");
         switchToMyframeOfPricingCalculator(driver);
-//        driver.findElement(TAB_COMPUTE_ENGINE_XPATH).click();
         tabComputeEngineButton.click();
         LOGGER.info("TAB Compute Engine activated");
         return this;

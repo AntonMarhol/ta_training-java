@@ -31,7 +31,6 @@ public class YopmailHomePage extends YopmailParentPage {
         LOGGER.info("Generating Mail address");
         waitForPresenceElementByXpath(BUTTON_GENERATE_EMAIL, driver);
         scrollPageToElement(buttonGenerateEmail).click();
-//        buttonGenerateEmail.click();
         LOGGER.info("Mail address generated");
         return new GenerateYopmailAddressPage(driver);
     }

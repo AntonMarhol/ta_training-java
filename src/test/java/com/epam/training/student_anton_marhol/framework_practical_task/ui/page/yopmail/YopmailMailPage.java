@@ -31,8 +31,7 @@ public class YopmailMailPage extends YopmailParentPage {
     public YopmailMailPage clickCheckInboxButton() {
         LOGGER.info("Opening Yopmail tab with Yopmail Inbox page");
         switchToTab(yopmailTab, driver);
-        scrollPageToElement(buttonCheckInBox);
-        buttonCheckInBox.click();
+        scrollPageToElement(buttonCheckInBox).click();
         LOGGER.info("Opened Yopmail tab with Yopmail Inbox page");
         return this;
     }
@@ -40,8 +39,7 @@ public class YopmailMailPage extends YopmailParentPage {
     public void clickRefreshMailButton() {
         LOGGER.info("Refreshing Mail page");
         driver.switchTo().defaultContent();
-        scrollPageToElement(buttonRefreshMail);
-        buttonRefreshMail.click();
+        scrollPageToElement(buttonRefreshMail).click();
         LOGGER.info("Mail page refreshed");
     }
 
